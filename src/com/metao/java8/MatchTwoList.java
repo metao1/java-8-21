@@ -1,16 +1,7 @@
 package com.metao.java8;
 
 import java.util.List;
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
-
-import static java.util.concurrent.CompletableFuture.delayedExecutor;
 
 public class MatchTwoList {
 

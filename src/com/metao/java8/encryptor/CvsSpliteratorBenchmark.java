@@ -1,14 +1,14 @@
 package com.metao.java8.encryptor;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.Stream;
 
-import static com.metao.java8.encryptor.CVSFileReaderUtils.*;
+import static com.metao.java8.encryptor.CVSFileReaderUtils.generateDecryptedFile;
 import static com.metao.java8.encryptor.FixedBatchSpliterator.withBatchSize;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -17,17 +17,15 @@ public class CvsSpliteratorBenchmark {
     private static double sink;
 
     public static void main(String[] args) throws IOException {
-        final Path inputPath = createInput();
         System.out.println("Start processing CSV Encryptor");
-        measureProcessing(Files.lines(inputPath));
+        measureProcessing(createStream("stream-in-0"));
         System.out.println("Start processing fixed-batch stream");
-        measureProcessing(withBatchSize(Files.lines(inputPath), 1024));
-        decryptInput();
+        measureProcessing(withBatchSize(createStream("stream-in-1"), 1024));
     }
 
-    private static void measureProcessing(Stream<String> stringStream) {
+    private static void measureProcessing(Stream<byte[]> stringStream) {
         final long start = System.nanoTime();
-        try (Stream<String> line = stringStream) {
+        try (Stream<byte[]> line = stringStream) {
             long totalTime = line.parallel()
                     .mapToLong(CvsSpliteratorBenchmark::processLine)
                     .sum();
@@ -40,31 +38,26 @@ public class CvsSpliteratorBenchmark {
         }
     }
 
-    private static long processLine(String line) {
+    private static long processLine(byte[] line) {
         final long localStart = System.nanoTime();
         double d = 0;
-        for (int i = 0; i < line.length(); i++)
-            for (int j = 0; j < line.length(); j++)
-                d += Math.pow(line.charAt(i), line.charAt(j));
+        for (int i = 0; i < line.length; i++)
+            for (byte b : line) d += Math.pow(b, b);
         sink += d;
         return System.nanoTime() - localStart;
     }
 
-    private static Path createInput() throws IOException {
-        final Path inputPath = Paths.get("encrypted.txt");
-        try (PrintWriter printWriter = new PrintWriter(Files.newBufferedWriter(inputPath))) {
-            for (int i = 0; i < 6_000; i++) {
-                final byte[] encryptedText = CVSEncryptor.encrypt(System.nanoTime() + "");
-                for (int j = 0; j < 25; j++) {
-                    printWriter.print(encryptedText);
-                }
-                printWriter.println();
-            }
+    private static Stream<byte[]> createStream(String input) {
+        List<byte[]> streamBuffer = new LinkedList<>();
+        int BUFFER_SIZE = 1880008;
+        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
+        for (int i = 0; i < BUFFER_SIZE; i++) {
+            buffer.putLong(System.nanoTime());
+            final byte[] encryptedText = CVSEncryptor.encrypt(buffer.array());
+            buffer.clear();
+            streamBuffer.add(encryptedText);
         }
-        return inputPath;
+        return streamBuffer.stream();
     }
 
-    private static void decryptInput() throws FileNotFoundException {
-         readFromFile("encrypted.txt");
-    }
 }
