@@ -12,7 +12,7 @@ public class MapInverter {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         List<String> items = List.of("apple", "cucumber", "egg", "egg", "apple", "orange", "pineapple", "blueberry", "apple", "banana", "egg", "cucumber");
-        Comparator<Map.Entry<String, Long>> reversedOrderValues = Map.Entry.<String, Long>comparingByKey();
+        Comparator<Map.Entry<String, Long>> reversedOrderValues = Map.Entry.comparingByKey();
 //        LinkedHashMap<Long, String> collect = items.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
 //                .entrySet()
 //                .stream()
@@ -24,6 +24,7 @@ public class MapInverter {
                 .sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.mapping(Map.Entry::getKey, Collectors.toList())));
 
+        //System.out.println(collect1);
         System.out.println(collect);
     }
 }
