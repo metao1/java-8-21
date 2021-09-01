@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class CompleteFutureWhenCompleteAsync<T> {
 

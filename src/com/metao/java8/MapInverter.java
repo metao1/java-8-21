@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MapInverter {
 
@@ -23,8 +24,12 @@ public class MapInverter {
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.mapping(Map.Entry::getKey, Collectors.toList())));
-
-        //System.out.println(collect1);
+        List<Integer> collect1 = Stream.of(1, 2, 3, 4)
+                .sorted((a, b) -> {
+                    System.out.println(a + "," + b);
+                    return b.compareTo(a);
+                }).collect(Collectors.toList());
+        System.out.println(collect1);
         System.out.println(collect);
     }
 }
