@@ -1,11 +1,13 @@
 package com.metao.java8.consumer;
 
+import java.util.Queue;
 import java.util.Random;
 import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -76,30 +78,24 @@ public class ConsumerExample {
         }
     }
 
-
     private static class DataHandler<T> implements DataInterface<T> {
-        private T data;
+        private final AtomicReference<T> data = new AtomicReference<>();
         private final static AtomicBoolean stopped = new AtomicBoolean(false);
-        private final Object lock = new Object();
 
         @Override
         public void accept(T t) {
             if (stopped.get()) {
                 return;
             }
-            synchronized (lock) {
-                this.data = t;
-            }
+            this.data.set(t);
         }
 
         @Override
         public T get() {
-            if (stopped.get()) {
-                return null;
+            if (!stopped.get()) {
+                return data.get();
             }
-            synchronized (lock) {
-                return data;
-            }
+            throw new NullPointerException("data handler is stopped.No data is available.");
         }
 
         @Override
