@@ -8,7 +8,6 @@ import static java.util.Spliterators.spliterator;
 
 public class DocEncryptor {
 
-
     public abstract static class FixedBatchSpliteratorBase<T> implements Spliterator<T> {
         private final int batchSize;
         private final int characteristics;
