@@ -13,13 +13,15 @@ public class ConsumerExample {
 
     public static void main(String[] args) throws InterruptedException {
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2);
-        DataInterface<Integer> consumerHandler = new ConsumerHandler<>();
-        Runnable producerEventHandler = new ProducerEventHandler(consumerHandler);
-        Runnable consumerEventHandler = new ConsumerEventHandler<>(consumerHandler);
+        DataInterface<Integer> dataHandler = new DataHandler<>();
+        EventHandler<Integer> producerEventHandler = new ProducerEventHandler(dataHandler);
+        EventHandler<Integer> consumerEventHandler = new ConsumerEventHandler<>(dataHandler);
 
         executorService.scheduleAtFixedRate(producerEventHandler, 0, 1L, TimeUnit.SECONDS);
         executorService.scheduleAtFixedRate(consumerEventHandler, 1, 1L, TimeUnit.SECONDS);
         executorService.awaitTermination(10, TimeUnit.SECONDS);
+        producerEventHandler.cancel();
+        consumerEventHandler.cancel();
         executorService.shutdown();
     }
 
@@ -75,7 +77,7 @@ public class ConsumerExample {
     }
 
 
-    private static class ConsumerHandler<T> implements DataInterface<T> {
+    private static class DataHandler<T> implements DataInterface<T> {
         private T data;
         private final static AtomicBoolean stopped = new AtomicBoolean(false);
         private final Object lock = new Object();
@@ -102,7 +104,7 @@ public class ConsumerExample {
 
         @Override
         public void stop() {
-            ConsumerHandler.stopped.set(true);
+            DataHandler.stopped.set(true);
         }
     }
 }
