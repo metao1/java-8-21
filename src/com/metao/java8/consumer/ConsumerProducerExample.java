@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ConsumerExample {
+public class ConsumerProducerExample {
 
     public static void main(String[] args) throws InterruptedException {
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2);
