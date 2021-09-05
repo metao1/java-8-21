@@ -1,4 +1,4 @@
-package com.metao.java8.consumer;
+package com.metao.java8.producerconsumer;
 
 import java.util.Queue;
 import java.util.Random;
