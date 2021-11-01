@@ -1,17 +1,15 @@
 package com.metao.java8.messagebus;
 
-import java.util.Random;
-
-public abstract class IntegerDataReader implements DataReader<Object>, DataReaderEvent<Object> {
-
-    private final Random random = new Random();
+public abstract class IntegerDataReader implements DataReader<Integer>, DataReaderEvent<Integer> {
 
     @Override
     public Integer read() {
-        int in = random.ints(1, 100).findFirst().getAsInt();
-        onReadSource(in);
-        return in;
+        Integer integer = readInteger();
+        onReadSource(integer);
+        return integer;
     }
+
+    protected abstract Integer readInteger();
 
     abstract String getName();
 
