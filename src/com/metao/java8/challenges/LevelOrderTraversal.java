@@ -1,4 +1,4 @@
-package com.metao.java8.code;
+package com.metao.java8.challenges;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -51,7 +51,8 @@ public class LevelOrderTraversal {
     }
 
     private static void handleLevelPrinting(StringBuilder sb, Queue<BinaryTreeNode> queue) {
-        for (int i = 0; i < queue.size(); i++) {
+        int size = queue.size();
+        for (int i = 0; i < size; i++) {
             BinaryTreeNode node = queue.poll();
             if (node != null) {
                 sb.append(node.data).append("\t");

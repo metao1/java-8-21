@@ -22,7 +22,7 @@ public class Demo extends WindowsDialog {
     }
 
     /**
-     * All of the client code should work with factories and products through
+     * All of the client challenges should work with factories and products through
      * abstract interfaces. This way it does not care which factory it works
      * with and what kind of product it returns.
      */

@@ -1,4 +1,4 @@
-package com.metao.java8.code;
+package com.metao.java8.challenges;
 
 import java.util.*;
 

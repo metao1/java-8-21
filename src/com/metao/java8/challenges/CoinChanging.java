@@ -1,6 +1,4 @@
-package com.metao.java8.code;
-
-import java.util.Arrays;
+package com.metao.java8.challenges;
 
 class CoinChanging {
     public static void main(String[] args) {

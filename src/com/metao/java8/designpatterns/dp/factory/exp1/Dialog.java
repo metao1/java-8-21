@@ -3,7 +3,7 @@ package com.metao.java8.designpatterns.dp.factory.exp1;
 public abstract class Dialog implements Button {
 
     public void renderWindow() {
-        // ... other code ...
+        // ... other challenges ...
 
         Button okButton = createButton();
         okButton.render();
