@@ -1,6 +1,8 @@
 package com.metao.java8.challenges;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class AllPossibleBraces {
 
@@ -21,12 +23,12 @@ public class AllPossibleBraces {
             result.add(new ArrayList<>(output));
         }
         if (left < n) {
-            output.add('0');
+            output.add('{');
             printAllBracesRecursive(n, left + 1, right, output, result);
             output.remove(output.size() - 1);
         }
         if (left > right) {
-            output.add('1');
+            output.add('}');
             printAllBracesRecursive(n, left, right + 1, output, result);
             output.remove(output.size() - 1);
         }

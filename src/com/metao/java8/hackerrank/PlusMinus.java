@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class PlusMinus {
 
@@ -14,6 +16,9 @@ public class PlusMinus {
         map.put(2, 0);
         map.put(3, 0);
         List<Integer> arr = List.of(-1, -4, 1, 1, 2);
+        Function<Integer, Boolean> f1 = j -> j == 0;
+        Function<Integer, Boolean> f2 = j -> j > 0;
+        Function<Integer, Boolean> f3 = j -> j < 0;
         for (Integer item : arr) {
             if (item > 0) {
                 int preValue = map.get(1) + 1;
