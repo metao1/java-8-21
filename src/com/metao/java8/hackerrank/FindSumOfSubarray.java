@@ -7,7 +7,7 @@ import java.util.List;
 public class FindSumOfSubarray {
 
     public static void main(String[] args) {
-        int diff = sumSubarrayMins(new int[]{4, 4, 4, 41});
+        int diff = sumSubarrayMins(new int[]{4, 4, 4, 4});
         System.out.println(diff);
     }
     public static int sumSubarrayMins(int[] arr) {
