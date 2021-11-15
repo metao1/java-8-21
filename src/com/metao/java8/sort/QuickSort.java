@@ -6,7 +6,7 @@ import java.util.List;
 public class QuickSort {
 
     public static void main(String[] args) {
-        List<Integer> list = List.of(12, 10, 1, 2, 5, 6, 7, Integer.MAX_VALUE);
+        List<Integer> list = List.of(7, 6, 5, 4, 3, 2, 1, Integer.MAX_VALUE);
         Integer[] array = list.toArray(Integer[]::new);
         quickSort(array, 0, list.size() - 1);
         System.out.println(Arrays.toString(array));
