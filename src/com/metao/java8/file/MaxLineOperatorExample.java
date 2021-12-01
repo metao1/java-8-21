@@ -12,7 +12,7 @@ public class MaxLineOperatorExample {
     }
 
     public MaxLineOperatorExample() {
-        try (InputStream inputStream = new FileInputStream("file.txt")) {
+        try (InputStream inputStream = new FileInputStream("merge-two-lists.txt")) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String LongestLine = bufferedReader.lines()
                     .parallel()
