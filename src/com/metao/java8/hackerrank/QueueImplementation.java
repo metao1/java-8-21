@@ -11,27 +11,29 @@ import java.util.stream.Stream;
 public class QueueImplementation {
 
     public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int queryNum;
-        try {
-            queryNum = Integer.parseInt(br.readLine().trim());
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            int queryNum;
+            try {
+                queryNum = Integer.parseInt(br.readLine().trim());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            List<List<Integer>> inputs = IntStream.range(0, queryNum)
+                    .mapToObj(it -> {
+                        try {
+                            return Stream.of(br.readLine().trim().replaceAll("\\s+$", "").split(" "))
+                                    .map(Integer::parseInt)
+                                    .collect(Collectors.toList());
+                        } catch (IOException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    }).toList();
+            final Queue queue = new Queue();
+            for (List<Integer> input : inputs) {
+                invokeAction(input, queue);
+            }
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        List<List<Integer>> inputs = IntStream.range(0, queryNum)
-                .mapToObj(it -> {
-                    try {
-                        return Stream.of(br.readLine().trim().replaceAll("\\s+$", "").split(" "))
-                                .map(Integer::parseInt)
-                                .collect(Collectors.toList());
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }).toList();
-        final Queue queue = new Queue();
-        for (List<Integer> input : inputs) {
-            invokeAction(input, queue);
+            e.printStackTrace();
         }
     }
 
