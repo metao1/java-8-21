@@ -7,9 +7,9 @@ import java.util.Set;
 public class CanSegmentString {
 
     public static void main(String[] args) {
-        Set<String> dic = new HashSet<>(List.of("apple", "pie", "pear", "pier"));
-        System.out.println(canSegmentStringMethod1("applepeer", dic));
-        System.out.println(canSegmentStringMethod2("applepie", dic));
+        Set<String> dic = new HashSet<>(List.of("apple", "pie", "ab", "pear", "pier"));
+        System.out.println(canSegmentStringMethod1("appleab", dic));
+        System.out.println(canSegmentStringMethod2("appleabpear", dic));
     }
 
     private static boolean canSegmentStringMethod2(String s, Set<String> dic) {
@@ -25,21 +25,21 @@ public class CanSegmentString {
         return false;
     }
 
+    //works only for two segmented words
     private static boolean canSegmentStringMethod1(String s, Set<String> dic) {
         if (s == null) {
             return false;
         }
         String foundItem = "";
-        int counter = 0;
-        while (s.length() > 0 && counter < s.length()) {
-            foundItem += (s.charAt(counter));
-            counter++;
+
+        for (int i = 0; s.length() > 0 && i < s.length(); i++) {
+            foundItem += (s.charAt(i));
             if (dic.contains(foundItem)) {
-                s = s.substring(counter);
-                counter = 0;
+                s = s.substring(i + 1);
+                i = 0;
                 foundItem = "";
             }
         }
-        return s.length() == 0;
+        return dic.contains(s);
     }
 }
