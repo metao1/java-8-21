@@ -2,9 +2,6 @@ package com.metao.java8.challenges;
 
 public class LongestPalindromicNumber {
 
-    public LongestPalindromicNumber() {
-    }
-
     public static void main(String[] args) throws InterruptedException {
         int digit1 = 99, digit2 = 99;
         String multiplyResult = null;
