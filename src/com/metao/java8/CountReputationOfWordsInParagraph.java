@@ -2,7 +2,6 @@ package com.metao.java8;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.StreamTokenizer;
 import java.io.StringReader;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -12,7 +11,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import static java.util.Spliterator.*;
+import static java.util.Spliterator.CONCURRENT;
+import static java.util.Spliterator.NONNULL;
 
 public class CountReputationOfWordsInParagraph {
 
@@ -21,7 +21,7 @@ public class CountReputationOfWordsInParagraph {
                 ",for this we have many options and the way we solve it can be efficient or simple, depends on the " +
                 "word length and method we need to use.";
         StringBuilder sb = new StringBuilder(p);
-        sb.append(String.valueOf(sb).repeat(10000));
+        sb.append(String.valueOf(sb).repeat(100000));
         countWordsMethod(sb.toString());
     }
 
@@ -119,7 +119,7 @@ public class CountReputationOfWordsInParagraph {
         p = p.replaceAll("[.|,]", "\s");
         Map<String, Integer> map = new ConcurrentHashMap<>();
         final String[] words = p.split("\s+");
-        StreamSupport.stream(Spliterators.spliterator(words, CONCURRENT | ORDERED | NONNULL), true)
+        StreamSupport.stream(Spliterators.spliterator(words, CONCURRENT | NONNULL), true)
                 .forEach((a -> map.merge(((String) a).toLowerCase(), 1, Integer::sum)));
         int sum = words.length - map.keySet().size();
         return sum;
