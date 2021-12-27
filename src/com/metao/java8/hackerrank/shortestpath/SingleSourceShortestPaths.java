@@ -1,4 +1,4 @@
-package com.metao.java8.shortestpath;
+package com.metao.java8.hackerrank.shortestpath;
 
 /**
  * Abstract class for computing single-source shortest paths.

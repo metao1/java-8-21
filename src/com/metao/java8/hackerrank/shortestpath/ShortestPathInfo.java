@@ -1,4 +1,4 @@
-package com.metao.java8.shortestpath;
+package com.metao.java8.hackerrank.shortestpath;
 
 /**
  * Class for information determined about a vertex during a

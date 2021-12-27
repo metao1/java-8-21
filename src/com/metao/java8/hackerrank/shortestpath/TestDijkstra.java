@@ -1,4 +1,4 @@
-package com.metao.java8.shortestpath;
+package com.metao.java8.hackerrank.shortestpath;
 
 public class TestDijkstra {
 

@@ -1,4 +1,4 @@
-package com.metao.java8.shortestpath;
+package com.metao.java8.hackerrank.shortestpath;
 
 /**
  * A class for vertices in graphs.  Every vertex has a name and an

@@ -48,10 +48,6 @@ public class ShortestPathDijkstra {
             adj.get(to.getIndex()).add(new Edge(to, from, weight));
         }
 
-        List<Edge> getAdj(Integer from) {
-            return adj.get(from);
-        }
-
         public int[] shortestReach(int startId) { // 0 indexed
             int[] distances = new int[nodeCount];
             Arrays.fill(distances, -1); // O(n) space.
@@ -59,7 +55,7 @@ public class ShortestPathDijkstra {
 
             que.add(startId); // Initialize queue.
             distances[startId] = 0;
-            HashSet<Integer> seen = new HashSet<>(); //O(n) space. Could be further optimized. I leave it to you to optimize it.
+            HashSet<Integer> seen = new HashSet<>(); //O(n) space. Could be further optimized.
 
             seen.add(startId);
             while(!que.isEmpty()) { // Standard BFS loop.
