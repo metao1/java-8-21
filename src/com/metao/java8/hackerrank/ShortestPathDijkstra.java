@@ -5,165 +5,134 @@ import java.util.*;
 public class ShortestPathDijkstra {
 
     public static void main(String[] args) {
-        int n = 6, m = 2, s = 1;
-        final Graph graph = Graph.createGraph(n);
-        for (int i = 0; i < n; i++) {
-            graph.addVertex(new Vertex(i));
-        }
-        final List<Vertex> vertices = graph.vertices();
-        vertices.get(1).edges = List.of(new Graph.Edge(2, 6), new Graph.Edge(3, 6));
-
-        printShortestPath(n, graph, s);
-        //final List<Integer> shortestPath = getShortestPath(n, m, List.of(List.of(1, 2), List.of(2, 3)), 1);
-        //System.out.println(shortestPath);
+        int n = 5, m = 3;
+        List<List<Integer>> list = List.of(List.of(1, 2), List.of(1, 3), List.of(3, 4));
+        List<Integer> weights = dijkstra(n, m, list, 1);
+        System.out.println(weights);
     }
 
-    private static List<Integer> getShortestPath(int n, int m, List<List<Integer>> edges, int s) {
-        List<Integer> distances = new ArrayList<>(n + 1);
-        List<Boolean> seen = new ArrayList<>();
-        for (int i = 0; i < n + 1; i++) {
-            distances.add(-1);
-            seen.add(i, false);
+    public static List<Integer> dijkstra(int n, int m, List<List<Integer>> list, int startIndex) {
+        Graph graph = new Graph(n);
+        for (List<Integer> edgeList : list) {
+            if (edgeList == null || edgeList.isEmpty()) {
+                continue;
+            }
+            Integer from = edgeList.get(0);
+            Integer to = edgeList.get(1);
+            graph.addEdge(new Vertex(from), new Vertex(to), 6);
         }
-        Queue<Integer> queue = new PriorityQueue<>();
-        queue.add(s);
-        while (!queue.isEmpty()) {
-            Integer currentIndex = queue.poll();
-            if (!seen.get(currentIndex)) {
-                seen.set(currentIndex, true);
-                for (List<Integer> edge : edges) {
-                    if (edge.get(0).equals(currentIndex)) {
-                        queue.add(edge.get(1));
-                    }
-                }
-                for (Integer dest : queue) {
-                    int dist = distances.get(dest), current = distances.get(currentIndex);
-                    if (dist == -1) {
-                        dist = Integer.MAX_VALUE;
-                    }
-                    if (current == -1) {
-                        current = 0;
-                    }
-                    if (current + 6 < dist) {
-                        distances.set(dest, current + 6);
-                    }
-                }
+        int[] shortestSet = graph.shortestReach(startIndex);
+        List<Integer> subs = new ArrayList<>();
+        for (int i = 0; i < shortestSet.length; i++) {
+            if(i!=startIndex) {
+                subs.add(shortestSet[i]);
             }
         }
-        System.out.println(distances);
-        distances = distances.subList(s + 1, distances.size());
-        for (int i = 0; i < distances.size(); i++) {
-            if (distances.get(i) == Integer.MAX_VALUE) {
-                distances.set(i, -1);
-            }
-        }
-        return distances;
-    }
-
-    private static void printShortestPath(int n, Graph graph, int s) {
-        if (n == 0 || graph.isEmpty()) {
-            return;
-        }
-        final List<Vertex> vertices = graph.vertices();
-        List<Boolean> seen = new ArrayList<>(n + 1);
-        Queue<Vertex> queue = new PriorityQueue<>();
-        Vertex rootVertex = vertices.get(s);
-        queue.offer(rootVertex);//insert starting node into queue
-        for (int i = 0; i < n + 1; i++) {
-            seen.add(false);
-        }
-        rootVertex.cost = 0;
-        while (!queue.isEmpty()) {
-            Vertex pointedVertex = queue.poll();
-            final int pointedIndex = pointedVertex.index;
-            if (!seen.get(pointedIndex)) {
-                seen.set(pointedIndex, false);
-                final List<Graph.Edge> edges = pointedVertex.edges();
-                for (Graph.Edge edge : edges) {
-                    Vertex neighborVertex = vertices.get(edge.index);
-                    neighborVertex.setCost(Math.min(pointedVertex.cost + edge.w, neighborVertex.cost));
-                    queue.add(graph.vertices.get(edge.index));
-                }
-            }
-        }
-        System.out.println(graph.vertices);
+        return subs.subList(1, subs.size());
     }
 
     private static class Graph {
-        private static Graph instance = null;
-        private List<Vertex> vertices;
+        private int nodeCount;
+        private final List<List<Edge>> adj;
 
-        private Graph() {
-        }
-
-        public void addVertex(Vertex vertex) {
-            if (instance == null) {
-                return;
+        Graph(int vCount) {
+            this.nodeCount = vCount;
+            this.adj = new LinkedList<>();
+            for (int i = 0; i < vCount + 1; i++) {
+                this.adj.add(i, new ArrayList<>());
             }
-            instance.vertices.add(vertex);
         }
 
-        public List<Vertex> vertices() {
-            return instance.vertices;
+        public void addEdge(Vertex from, Vertex to, int weight) {
+            adj.get(from.getIndex()).add(new Edge(from, to, weight));
+            adj.get(to.getIndex()).add(new Edge(to, from, weight));
         }
 
-        public static Graph createGraph(int n) {
-            if (instance == null) {
-                instance = new Graph();
+        List<Edge> getAdj(Integer from) {
+            return adj.get(from);
+        }
+
+        public int[] shortestReach(int startId) { // 0 indexed
+            int[] distances = new int[nodeCount];
+            Arrays.fill(distances, -1); // O(n) space.
+            Queue<Integer> que = new LinkedList<>();
+
+            que.add(startId); // Initialize queue.
+            distances[startId] = 0;
+            HashSet<Integer> seen = new HashSet<>(); //O(n) space. Could be further optimized. I leave it to you to optimize it.
+
+            seen.add(startId);
+            while(!que.isEmpty()) { // Standard BFS loop.
+                Integer curr = que.poll();
+                for(Edge edge : adj.get(curr)) {
+                    int node = edge.getTo().getIndex();
+                    if(!seen.contains(node)) {
+                        que.offer(node);
+                        // Right place to add the visited set.
+                        seen.add(node);
+                        // keep on increasing distance level by level.
+                        distances[node] = distances[curr] + 6;
+                    }
+                }
             }
-            instance.vertices = new ArrayList<>(n + 1);
-            for (int i = 1; i < n + 1; i++) {
-                instance.vertices.add(new Vertex(i));
-            }
-            return instance;
-        }
-
-        public boolean isEmpty() {
-            return instance.vertices == null;
-        }
-
-        public final static class Edge {
-            int index, w;
-
-            Edge(int index, int w) {
-                this.index = index;
-                this.w = w;
-            }
+            return distances;
         }
     }
 
-    static final class Vertex implements Comparator<Vertex> {
-        int index;
-        List<Graph.Edge> edges = new ArrayList<>();
-        int cost = Integer.MAX_VALUE;
+    private static class Vertex implements Comparable<Vertex> {
+        private final int index;
+        private long distance;
 
         Vertex(int index) {
             this.index = index;
+            this.distance = Long.MAX_VALUE;
         }
 
-        public void addEdge(Graph.Edge edge) {
-            this.edges.add(edge);
+        void setDistance(long distance) {
+            this.distance = distance;
         }
 
-        private void setCost(int cost) {
-            this.cost = cost;
-        }
-
-        int getCost() {
-            return cost;
-        }
-
-        List<Graph.Edge> edges() {
-            return edges;
+        int getIndex() {
+            return index;
         }
 
         @Override
-        public int compare(Vertex v1, Vertex v2) {
-            if (v1.cost < v2.cost)
-                return -1;
-            else if (v1.cost > v2.cost)
-                return 1;
-            return 0;
+        public int compareTo(Vertex o) {
+            return Double.compare(index, o.index) + Double.compare(this.distance, o.distance);
+        }
+
+        @Override
+        public String toString() {
+            return "Vertex{" +
+                    "index=" + index +
+                    ", distance=" + distance +
+                    '}';
+        }
+    }
+
+    private static class Edge implements Comparable<Edge> {
+
+        private final Vertex from;
+        private final Vertex to;
+        private final int weight;
+
+        Edge(Vertex from, Vertex to, int weight) {
+            this.from = from;
+            this.to = to;
+            this.weight = weight;
+        }
+
+        Vertex getTo() {
+            return to;
+        }
+
+        int getWeight() {
+            return weight;
+        }
+
+        @Override
+        public int compareTo(Edge o) {
+            return Integer.compare(o.weight, weight);
         }
     }
 

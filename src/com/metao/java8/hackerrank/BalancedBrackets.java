@@ -29,11 +29,15 @@ public class BalancedBrackets {
             System.err.println(ex.getMessage());
         }
     }
+    public void get(){
+    }
 
     public static String isBalanced(String s) {
         if (s.length() % 2 != 0) {
             return "NO";
         }
+        int i =07;
+        System.out.println(i);
         Map<Character, Character> map = new HashMap<>();
         map.put('(', ')');
         map.put('{', '}');
