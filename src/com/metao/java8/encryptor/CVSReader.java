@@ -12,15 +12,15 @@ public class CVSReader {
     }
 
     public byte[] readNext() {
-        final int availableBytes;
+        int availableBytes;
         final int BUFFER_SIZE = 1024;
         byte[] buffer = new byte[BUFFER_SIZE];
         try {
-            availableBytes = inputStream.available();
-            if (availableBytes > 0) {
-                inputStream.read(buffer, 0, Math.min(availableBytes, BUFFER_SIZE));
-                return buffer;
+
+            while ((availableBytes = inputStream.available()) > 0) {
+                availableBytes = inputStream.read(buffer, 0, Math.min(availableBytes, BUFFER_SIZE));
             }
+            return buffer;
         } catch (IOException e) {
             try {
                 inputStream.close();
