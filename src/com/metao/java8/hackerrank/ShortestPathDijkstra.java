@@ -12,30 +12,16 @@ public class ShortestPathDijkstra {
     }
 
     public static List<Integer> dijkstra(int n, int m, List<List<Integer>> list, int startIndex) {
-        Graph graph = new Graph(n);
-        for (List<Integer> edgeList : list) {
-            if (edgeList == null || edgeList.isEmpty()) {
-                continue;
-            }
-            Integer from = edgeList.get(0);
-            Integer to = edgeList.get(1);
-            graph.addEdge(new Vertex(from), new Vertex(to), 6);
-        }
+        Graph graph = Graph.build(n, list);
         int[] shortestSet = graph.shortestReach(startIndex);
-        List<Integer> subs = new ArrayList<>();
-        for (int i = 0; i < shortestSet.length; i++) {
-            if(i!=startIndex) {
-                subs.add(shortestSet[i]);
-            }
-        }
-        return subs.subList(1, subs.size());
+        return graph.buildShortestPath(startIndex, shortestSet);
     }
 
     private static class Graph {
-        private int nodeCount;
-        private final List<List<Edge>> adj;
+        private final int nodeCount; // number of nodes in graph
+        private final List<List<Edge>> adj; // list of edges for each node.
 
-        Graph(int vCount) {
+        private Graph(int vCount) {
             this.nodeCount = vCount;
             this.adj = new LinkedList<>();
             for (int i = 0; i < vCount + 1; i++) {
@@ -43,9 +29,32 @@ public class ShortestPathDijkstra {
             }
         }
 
+        public static Graph build(int n, List<List<Integer>> list) {
+            Graph graph = new Graph(n);
+            for (List<Integer> edgeList : list) {
+                if (edgeList == null || edgeList.isEmpty()) {
+                    continue;
+                }
+                Integer from = edgeList.get(0);
+                Integer to = edgeList.get(1);
+                graph.addEdge(new Vertex(from), new Vertex(to), 6);
+            }
+            return graph;
+        }
+
         public void addEdge(Vertex from, Vertex to, int weight) {
             adj.get(from.getIndex()).add(new Edge(from, to, weight));
             adj.get(to.getIndex()).add(new Edge(to, from, weight));
+        }
+
+        public List<Integer> buildShortestPath(int startIndex, int[] shortestSet) {
+            List<Integer> subs = new ArrayList<>();
+            for (int i = 0; i < shortestSet.length; i++) {
+                if (i != startIndex) {
+                    subs.add(shortestSet[i]);
+                }
+            }
+            return subs.subList(1, subs.size());
         }
 
         public int[] shortestReach(int startId) { // 0 indexed
@@ -67,68 +76,54 @@ public class ShortestPathDijkstra {
                         // Right place to add the visited set.
                         seen.add(node);
                         // keep on increasing distance level by level.
-                        distances[node] = distances[curr] + 6;
+                        distances[node] = distances[curr] + edge.getWeight();
                     }
                 }
             }
             return distances;
         }
-    }
 
-    private static class Vertex implements Comparable<Vertex> {
-        private final int index;
-        private long distance;
+        private static class Vertex implements Comparable<Vertex> {
+            private final int index;
 
-        Vertex(int index) {
-            this.index = index;
-            this.distance = Long.MAX_VALUE;
+            Vertex(int index) {
+                this.index = index;
+            }
+
+            int getIndex() {
+                return index;
+            }
+
+            @Override
+            public int compareTo(Vertex o) {
+                return Double.compare(index, o.index);
+            }
         }
 
-        void setDistance(long distance) {
-            this.distance = distance;
-        }
+        private static class Edge implements Comparable<Edge> {
 
-        int getIndex() {
-            return index;
-        }
+            private final Vertex from;
+            private final Vertex to;
+            private final int weight;
 
-        @Override
-        public int compareTo(Vertex o) {
-            return Double.compare(index, o.index) + Double.compare(this.distance, o.distance);
-        }
+            Edge(Vertex from, Vertex to, int weight) {
+                this.from = from;
+                this.to = to;
+                this.weight = weight;
+            }
 
-        @Override
-        public String toString() {
-            return "Vertex{" +
-                    "index=" + index +
-                    ", distance=" + distance +
-                    '}';
-        }
-    }
+            Vertex getTo() {
+                return to;
+            }
 
-    private static class Edge implements Comparable<Edge> {
+            int getWeight() {
+                return weight;
+            }
 
-        private final Vertex from;
-        private final Vertex to;
-        private final int weight;
-
-        Edge(Vertex from, Vertex to, int weight) {
-            this.from = from;
-            this.to = to;
-            this.weight = weight;
-        }
-
-        Vertex getTo() {
-            return to;
-        }
-
-        int getWeight() {
-            return weight;
-        }
-
-        @Override
-        public int compareTo(Edge o) {
-            return Integer.compare(o.weight, weight);
+            @Override
+            public int compareTo(Edge o) {
+                return Integer.compare(o.weight, weight);
+            }
         }
     }
 

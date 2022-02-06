@@ -20,15 +20,16 @@ public class MapMultiExample {
 
             static Stream<Object> sumUp(Supplier<List<String>> supplier) {
                 List<String> list = supplier.get();
-                return list.stream().mapMulti((integer, objectConsumer) -> {
-                    for (int i = 0; i < integer.length(); i++) {
-                        if (Character.isUpperCase(integer.charAt(i))) {
-                            objectConsumer.accept(integer.charAt(i) + "-> capitalized");
-                        } else {
-                            objectConsumer.accept(integer.charAt(i) + "-> lowercase");
-                        }
-                    }
-                });
+                return list.stream()
+                        .mapMulti((integer, objectConsumer) -> {
+                            for (int i = 0; i < integer.length(); i++) {
+                                if (Character.isUpperCase(integer.charAt(i))) {
+                                    objectConsumer.accept(integer.charAt(i) + "-> capitalized");
+                                } else {
+                                    objectConsumer.accept(integer.charAt(i) + "-> lowercase");
+                                }
+                            }
+                        });
             }
         }
 
