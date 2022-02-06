@@ -1,4 +1,4 @@
-package com.metao.java8.hackerrank.shortestpath;
+package com.metao.java8.hackerrank;
 
 public class MemoizationDynamicProgramming {
 
