@@ -16,7 +16,6 @@ import java.util.stream.StreamSupport;
 
 import static java.util.Spliterator.CONCURRENT;
 import static java.util.Spliterator.NONNULL;
-import static java.util.stream.Collectors.counting;
 
 public class CountReputationOfWordsInParagraph {
 

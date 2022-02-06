@@ -2,6 +2,8 @@ package com.metao.java8.hackerrank.business;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class LoveCounter {
     static class Love {
@@ -45,9 +47,18 @@ public class LoveCounter {
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
                 .map(Map.Entry::getKey)
                 .forEach(System.out::println);
-
+        Long average = IntStream.range(0, 101)
+                .boxed()
+                .collect(Collectors.teeing
+                        (
+                                Collectors.summingInt(i -> i),
+                                Collectors.counting(),
+                                (sum, n) -> sum / n
+                        )
+                );
+        System.out.println("average = " + average);
         //only save the first incident in map
-        HashMap<String, String> collect = Arrays.stream(loves)
+        Map<String, String> collect = Stream.of(loves)
                 .collect(Collectors.toMap(Love::getReceiver, Love::getSender, (v1, v2) -> v1, HashMap::new));
 
         System.out.println("collect = " + collect);

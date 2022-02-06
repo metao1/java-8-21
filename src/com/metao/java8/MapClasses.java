@@ -20,7 +20,8 @@ public class MapClasses {
             map.put(s, s);
         }
         Map<Long, List<String>> collect = list
-                .stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue())

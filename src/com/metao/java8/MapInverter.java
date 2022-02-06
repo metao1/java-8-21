@@ -19,7 +19,9 @@ public class MapInverter {
 //                .stream()
 //                .sorted(Map.Entry.comparingByValue())
 //                .collect(Collectors.toMap(Map.Entry::getVertex, Map.Entry::getKey, (v1, v2) -> v1, LinkedHashMap::new));
-        Map<Long, List<String>> collect = items.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+        Map<Long, List<String>> collect = items
+                .stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
