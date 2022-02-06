@@ -70,7 +70,7 @@ public class CountReputationOfWordsInParagraph {
         final String[] words = p.split("\s+");
         final int totalGroups = Stream.of(words)
                 .parallel()
-                .collect(Collectors.groupingBy(Function.identity(), counting()))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .keySet()
                 .size();
         return words.length - totalGroups;
