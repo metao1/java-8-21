@@ -11,25 +11,63 @@ public class ShortestPathDijkstra {
         System.out.println(weights);
     }
 
-    public static List<Integer> dijkstra(int n, int m, List<List<Integer>> list, int startIndex) {
-        Graph graph = Graph.build(n, list);
-        int[] shortestSet = graph.shortestReach(startIndex);
-        return graph.buildShortestPath(startIndex, shortestSet);
+    public static List<Integer> dijkstra(int nodeCount, int m, List<List<Integer>> indexList, int startIndex) {
+        Graph graph = Graph.buildFromIndexList(nodeCount, indexList);
+        int[] distances = new int[nodeCount];
+        HashSet<Integer> seen = new HashSet<>(); //O(n) space. Could be further optimized.
+        Queue<Integer> q = new LinkedList<>();
+        setupDijkstra(startIndex, distances, q);
+        while (!q.isEmpty()) { // Standard BFS loop.
+            Integer from = q.poll();
+            updateNeighbors(graph, q, seen, distances, from);
+        }
+        return buildShortestPath(startIndex, distances);
+    }
+
+    private static void setupDijkstra(int startIndex, int[] distances, Queue<Integer> q) {
+        Arrays.fill(distances, -1); // O(n) space.
+        q.add(startIndex); // Initialize queue.
+        distances[startIndex] = 0;
+    }
+
+    private static void updateNeighbors(Graph g, Queue<Integer> q, HashSet<Integer> seen, int[] distances, Integer from) {
+        List<Graph.Edge> neighbors = g.getNeighbors(from);
+        for (Graph.Edge neighbor : neighbors) {
+            int to = neighbor.getTo().getIndex();
+            if (!seen.contains(to)) {
+                q.offer(to);
+                seen.add(to); // Right place to add the visited set.
+                // keep on increasing distance level by level.
+                distances[to] = distances[from] + neighbor.getWeight();
+            }
+        }
+    }
+
+    private static List<Integer> buildShortestPath(int startIndex, int[] shortestSet) {
+        List<Integer> subs = new ArrayList<>();
+        for (int i = 0; i < shortestSet.length; i++) {
+            if (i != startIndex) { // everything except the startIndex
+                subs.add(shortestSet[i]);
+            }
+        }
+        return subs.subList(1, subs.size()); // since startIndex starts from one, ignoring index zero
     }
 
     private static class Graph {
-        private final int nodeCount; // number of nodes in graph
         private final List<List<Edge>> adj; // list of edges for each node.
 
         private Graph(int vCount) {
-            this.nodeCount = vCount;
             this.adj = new LinkedList<>();
             for (int i = 0; i < vCount + 1; i++) {
                 this.adj.add(i, new ArrayList<>());
             }
         }
 
-        public static Graph build(int n, List<List<Integer>> list) {
+        public List<Edge> getNeighbors(int index) {
+            return adj.get(index);
+        }
+
+        public static Graph buildFromIndexList(int n, List<List<Integer>> list) {
             Graph graph = new Graph(n);
             for (List<Integer> edgeList : list) {
                 if (edgeList == null || edgeList.isEmpty()) {
@@ -43,52 +81,11 @@ public class ShortestPathDijkstra {
         }
 
         public void addEdge(Vertex from, Vertex to, int weight) {
-            adj.get(from.getIndex()).add(new Edge(from, to, weight));
-            adj.get(to.getIndex()).add(new Edge(to, from, weight));
+            adj.get(from.getIndex()).add(new Edge(from, to, weight)); // from <-> to, creating a bidirectional edge
+            adj.get(to.getIndex()).add(new Edge(to, from, weight));// to <-> from
         }
 
-        public List<Integer> buildShortestPath(int startIndex, int[] shortestSet) {
-            List<Integer> subs = new ArrayList<>();
-            for (int i = 0; i < shortestSet.length; i++) {
-                if (i != startIndex) {
-                    subs.add(shortestSet[i]);
-                }
-            }
-            return subs.subList(1, subs.size());
-        }
-
-        public int[] shortestReach(int startId) { // 0 indexed
-            int[] distances = new int[nodeCount];
-            Arrays.fill(distances, -1); // O(n) space.
-            Queue<Integer> que = new LinkedList<>();
-
-            que.add(startId); // Initialize queue.
-            distances[startId] = 0;
-            HashSet<Integer> seen = new HashSet<>(); //O(n) space. Could be further optimized.
-
-            seen.add(startId);
-            while(!que.isEmpty()) { // Standard BFS loop.
-                Integer curr = que.poll();
-                for(Edge edge : adj.get(curr)) {
-                    int node = edge.getTo().getIndex();
-                    if(!seen.contains(node)) {
-                        que.offer(node);
-                        // Right place to add the visited set.
-                        seen.add(node);
-                        // keep on increasing distance level by level.
-                        distances[node] = distances[curr] + edge.getWeight();
-                    }
-                }
-            }
-            return distances;
-        }
-
-        private static class Vertex implements Comparable<Vertex> {
-            private final int index;
-
-            Vertex(int index) {
-                this.index = index;
-            }
+        private record Vertex(int index) implements Comparable<Vertex> {
 
             int getIndex() {
                 return index;
@@ -100,17 +97,7 @@ public class ShortestPathDijkstra {
             }
         }
 
-        private static class Edge implements Comparable<Edge> {
-
-            private final Vertex from;
-            private final Vertex to;
-            private final int weight;
-
-            Edge(Vertex from, Vertex to, int weight) {
-                this.from = from;
-                this.to = to;
-                this.weight = weight;
-            }
+        private record Edge(Vertex from, Vertex to, int weight) implements Comparable<Edge> {
 
             Vertex getTo() {
                 return to;
@@ -126,5 +113,4 @@ public class ShortestPathDijkstra {
             }
         }
     }
-
 }
