@@ -16,11 +16,11 @@ import java.util.stream.Stream;
 public class DownloadLargeFiles {
 
     public static void main(String[] args) throws IOException {
-        Path ipPath1 = Paths.get("hugefile1.txt");
+        Path ipPath1 = Paths.get("files/hugefile1.txt");
         var list = List.of(ipPath1);
         Flux<Path> pathFlux = Flux.fromStream(list::stream)
                 .repeat(5);
-        Path opPath = Paths.get("out.txt");
+        Path opPath = Paths.get("files/out.txt");
         BufferedWriter bw = Files.newBufferedWriter(opPath, StandardOpenOption.CREATE, StandardOpenOption.CREATE);
 //        Flux<String> stringFlux = pathFlux
 //                .flatMap(path -> Mono.fromCallable(() -> readFromFile(path))

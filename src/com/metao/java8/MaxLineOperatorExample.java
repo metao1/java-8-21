@@ -1,4 +1,4 @@
-package com.metao.java8.file;
+package com.metao.java8;
 
 import java.io.*;
 import java.util.Comparator;
@@ -12,19 +12,15 @@ public class MaxLineOperatorExample {
     }
 
     public MaxLineOperatorExample() {
-        try (InputStream inputStream = new FileInputStream("merge-two-lists.txt")) {
+        try (InputStream inputStream = new FileInputStream("files/merge-two-lists.txt")) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String LongestLine = bufferedReader.lines()
                     .parallel()
                     .max(Comparator.comparingInt(String::length))
                     .orElse("");
             System.out.println(LongestLine);
-            record Node(int value, Node next) {
-            }
-
             Double average = Stream.of(1, 2, 3, 4)
                     .collect(Collectors.teeing(Collectors.summingDouble(i -> i), Collectors.counting(), (sum, n) -> sum / n));
-
             System.out.println(average);
         } catch (IOException e) {
             e.printStackTrace();

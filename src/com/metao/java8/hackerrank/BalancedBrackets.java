@@ -12,8 +12,8 @@ import java.util.Map;
 public class BalancedBrackets {
 
     public static void main(String[] args) {
-        try (BufferedReader ir = Files.newBufferedReader(Path.of("input09.txt"), StandardCharsets.UTF_8)) {
-            try (BufferedReader or = Files.newBufferedReader(Path.of("output09.txt"), StandardCharsets.UTF_8)) {
+        try (BufferedReader ir = Files.newBufferedReader(Path.of("files/input09.txt"), StandardCharsets.UTF_8)) {
+            try (BufferedReader or = Files.newBufferedReader(Path.of("files/output09.txt"), StandardCharsets.UTF_8)) {
                 final int count = Integer.parseInt(ir.readLine().trim());
                 for (int i = 0; i < count; i++) {
                     final String line = ir.readLine().trim();

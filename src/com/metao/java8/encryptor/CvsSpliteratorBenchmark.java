@@ -11,11 +11,11 @@ public class CvsSpliteratorBenchmark {
     public static void main(String[] args) throws IOException {
         System.out.println("Start processing CSV Encryptor");
         long startTime = System.nanoTime();
-        CVSFileReaderUtils.readStreamFileEncrypt("encrypted.txt");
+        CVSFileReaderUtils.readStreamFileEncrypt("files/encrypted.txt");
         measureProcessing(startTime);
         System.out.println("Start processing fixed-batch stream");
         startTime = System.nanoTime();
-        Stream<byte[]> stream = CVSFileReaderUtils.readStreamFileEncrypt("encrypted.txt");
+        Stream<byte[]> stream = CVSFileReaderUtils.readStreamFileEncrypt("files/encrypted.txt");
         withBatchSize(stream, 1024);
         measureProcessing(startTime);
     }
