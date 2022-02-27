@@ -2,6 +2,7 @@ package com.metao.java8.challenges;
 
 import java.util.stream.IntStream;
 
+
 public class SmallestMultipleExample {
 
     public static void main(String[] args) {
