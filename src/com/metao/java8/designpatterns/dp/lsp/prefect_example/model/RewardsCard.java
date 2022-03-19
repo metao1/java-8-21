@@ -1,8 +1,8 @@
-package com.metao.java8.designpatterns.dp.lsp.model;
+package com.metao.java8.designpatterns.dp.lsp.prefect_example.model;
 
-import com.metao.java8.designpatterns.dp.lsp.exception.PaymentFailedException;
-import com.metao.java8.designpatterns.dp.lsp.exception.PaymentInstrumentInvalidException;
-import com.metao.java8.designpatterns.dp.lsp.service.PaymentInstrument;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.exception.PaymentFailedException;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.PaymentInstrument;
 
 public class RewardsCard implements PaymentInstrument {
     private final String name;

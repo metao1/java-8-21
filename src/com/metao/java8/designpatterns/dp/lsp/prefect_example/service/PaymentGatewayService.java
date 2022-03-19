@@ -1,7 +1,7 @@
-package com.metao.java8.designpatterns.dp.lsp.service;
+package com.metao.java8.designpatterns.dp.lsp.prefect_example.service;
 
-import com.metao.java8.designpatterns.dp.lsp.model.PaymentGatewayResponse;
-import com.metao.java8.designpatterns.dp.lsp.exception.PaymentFailedException;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.exception.PaymentFailedException;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.model.PaymentGatewayResponse;
 
 import java.util.Date;
 

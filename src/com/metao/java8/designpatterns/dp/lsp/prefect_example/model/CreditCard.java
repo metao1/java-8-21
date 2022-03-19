@@ -1,10 +1,10 @@
-package com.metao.java8.designpatterns.dp.lsp.model;
+package com.metao.java8.designpatterns.dp.lsp.prefect_example.model;
 
-import com.metao.java8.designpatterns.dp.lsp.exception.PaymentInstrumentInvalidException;
-import com.metao.java8.designpatterns.dp.lsp.service.BaseBankCard;
-import com.metao.java8.designpatterns.dp.lsp.service.FraudChecker;
-import com.metao.java8.designpatterns.dp.lsp.service.PaymentGatewayHandler;
-import com.metao.java8.designpatterns.dp.lsp.service.validator.PaymentInstrumentValidator;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.BaseBankCard;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.FraudChecker;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.PaymentGatewayHandler;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.validator.PaymentInstrumentValidator;
 
 import java.util.Date;
 
@@ -22,7 +22,7 @@ public class CreditCard extends BaseBankCard {
 
     @Override
     public void validate() throws PaymentInstrumentInvalidException {
-        basicValidator.validate();
+        super.validate();
         // additional validations for credit cards
     }
 

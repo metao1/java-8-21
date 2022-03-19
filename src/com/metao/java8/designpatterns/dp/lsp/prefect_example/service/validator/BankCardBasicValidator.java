@@ -1,8 +1,8 @@
-package com.metao.java8.designpatterns.dp.lsp.service.validator;
-
-import com.metao.java8.designpatterns.dp.lsp.exception.PaymentInstrumentInvalidException;
+package com.metao.java8.designpatterns.dp.lsp.prefect_example.service.validator;
 
 import java.util.Date;
+
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
 
 public class BankCardBasicValidator implements PaymentInstrumentValidator {
   String name;

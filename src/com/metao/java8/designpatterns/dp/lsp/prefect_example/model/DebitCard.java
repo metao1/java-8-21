@@ -1,11 +1,11 @@
-package com.metao.java8.designpatterns.dp.lsp.model;
-
-import com.metao.java8.designpatterns.dp.lsp.service.FraudChecker;
-import com.metao.java8.designpatterns.dp.lsp.service.PaymentGatewayHandler;
-import com.metao.java8.designpatterns.dp.lsp.service.validator.PaymentInstrumentValidator;
-import com.metao.java8.designpatterns.dp.lsp.service.BaseBankCard;
+package com.metao.java8.designpatterns.dp.lsp.prefect_example.model;
 
 import java.util.Date;
+
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.BaseBankCard;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.FraudChecker;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.PaymentGatewayHandler;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.validator.PaymentInstrumentValidator;
 
 public class DebitCard extends BaseBankCard {
 

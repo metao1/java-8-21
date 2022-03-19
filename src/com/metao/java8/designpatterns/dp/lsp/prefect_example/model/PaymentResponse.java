@@ -1,4 +1,4 @@
-package com.metao.java8.designpatterns.dp.lsp.model;
+package com.metao.java8.designpatterns.dp.lsp.prefect_example.model;
 
 public class PaymentResponse {
     private String identifier;

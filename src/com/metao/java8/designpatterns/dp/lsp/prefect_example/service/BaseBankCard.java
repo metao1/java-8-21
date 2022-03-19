@@ -1,11 +1,11 @@
-package com.metao.java8.designpatterns.dp.lsp.service;
+package com.metao.java8.designpatterns.dp.lsp.prefect_example.service;
 
-import com.metao.java8.designpatterns.dp.lsp.exception.FraudDetectedException;
-import com.metao.java8.designpatterns.dp.lsp.exception.PaymentFailedException;
-import com.metao.java8.designpatterns.dp.lsp.exception.PaymentInstrumentInvalidException;
-import com.metao.java8.designpatterns.dp.lsp.model.PaymentGatewayResponse;
-import com.metao.java8.designpatterns.dp.lsp.model.PaymentResponse;
-import com.metao.java8.designpatterns.dp.lsp.service.validator.PaymentInstrumentValidator;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.exception.FraudDetectedException;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.exception.PaymentFailedException;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.model.PaymentGatewayResponse;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.model.PaymentResponse;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.validator.PaymentInstrumentValidator;
 
 import java.util.Date;
 
@@ -18,13 +18,13 @@ public abstract class BaseBankCard implements PaymentInstrument {
   protected PaymentGatewayHandler gatewayHandler;
   protected PaymentInstrumentValidator basicValidator;
 
-  public BaseBankCard(String name,
-                      String cardNumber,
-                      String verificationCode,
-                      Date expiryDate,
-                      PaymentInstrumentValidator basicValidator,
-                      FraudChecker fraudChecker,
-                      PaymentGatewayHandler gatewayHandler) {
+  protected BaseBankCard(String name,
+      String cardNumber,
+      String verificationCode,
+      Date expiryDate,
+      PaymentInstrumentValidator basicValidator,
+      FraudChecker fraudChecker,
+      PaymentGatewayHandler gatewayHandler) {
     this.name = name;
     this.cardNumber = cardNumber;
     this.verificationCode = verificationCode;
@@ -35,7 +35,7 @@ public abstract class BaseBankCard implements PaymentInstrument {
   }
 
   @Override
-  public void validate() throws PaymentInstrumentInvalidException, PaymentInstrumentInvalidException {
+  public void validate() throws PaymentInstrumentInvalidException {
     basicValidator.validate();
   }
 

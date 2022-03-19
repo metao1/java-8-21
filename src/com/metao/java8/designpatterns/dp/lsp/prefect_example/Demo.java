@@ -1,15 +1,15 @@
-package com.metao.java8.designpatterns.dp.lsp;
+package com.metao.java8.designpatterns.dp.lsp.prefect_example;
 
-import com.metao.java8.designpatterns.dp.lsp.model.CreditCard;
-import com.metao.java8.designpatterns.dp.lsp.model.OrderDetails;
-import com.metao.java8.designpatterns.dp.lsp.model.RewardsCard;
-import com.metao.java8.designpatterns.dp.lsp.service.PaymentGatewayHandler;
-import com.metao.java8.designpatterns.dp.lsp.service.PaymentProcessor;
-import com.metao.java8.designpatterns.dp.lsp.service.ThirdPartyFraudChecker;
-import com.metao.java8.designpatterns.dp.lsp.service.validator.BankCardBasicValidator;
-import com.metao.java8.designpatterns.dp.lsp.service.FraudChecker;
-import com.metao.java8.designpatterns.dp.lsp.service.PaymentGatewayService;
-import com.metao.java8.designpatterns.dp.lsp.service.validator.PaymentInstrumentValidator;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.model.CreditCard;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.model.OrderDetails;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.model.RewardsCard;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.FraudChecker;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.PaymentGatewayHandler;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.PaymentGatewayService;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.PaymentProcessor;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.ThirdPartyFraudChecker;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.validator.BankCardBasicValidator;
+import com.metao.java8.designpatterns.dp.lsp.prefect_example.service.validator.PaymentInstrumentValidator;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
