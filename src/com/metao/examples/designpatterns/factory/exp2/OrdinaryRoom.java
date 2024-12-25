@@ -1,9 +1,9 @@
 package com.metao.examples.designpatterns.factory.exp2;
 
-public class OrdinaryRoom implements com.metao.examples.designpatterns.factory.exp2.Room {
+public class OrdinaryRoom implements Room {
 
     @Override
-    public void connect(com.metao.examples.designpatterns.factory.exp2.Room room) {
+    public void connect(Room room) {
         System.out.println(getName() + " connects to :" + room.getName());
     }
 
