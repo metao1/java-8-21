@@ -1,0 +1,19 @@
+/.idea/
+*.class
+/*.xml/
+/*.iml
+.DS_Store
+**/.DS_Store
+**/*.txt
+*.txt
+.vscode
+.idea
+
+gradlew.bat
+.gradle/*
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build

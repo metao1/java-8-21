@@ -1,0 +1,51 @@
+
+plugins {
+    id 'base'
+    id 'idea'
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+}
+compileTestJava {
+    sourceCompatibility = 21
+    options.encoding = 'UTF-8'
+}
+
+compileJava {
+    sourceCompatibility = 21
+    targetCompatibility = 21
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    // Use JUnit Jupiter for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+    implementation platform('org.testcontainers:testcontainers-bom:1.17.6') //import bom
+    testImplementation 'org.testcontainers:redpanda'
+
+    implementation 'org.reactivestreams:reactive-streams:1.0.4'
+    implementation 'io.projectreactor:reactor-core:3.7.1'
+
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'org.apache.commons:commons-csv:1.9.0'
+    implementation 'com.googlecode.json-simple:json-simple:1.1'
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'            
+        }
+    }
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
