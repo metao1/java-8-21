@@ -36,7 +36,7 @@ public class BalancedBrackets {
         if (s.length() % 2 != 0) {
             return "NO";
         }
-        int i =07;
+        int i = 7;
         System.out.println(i);
         Map<Character, Character> map = new HashMap<>();
         map.put('(', ')');

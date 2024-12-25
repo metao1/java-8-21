@@ -1,5 +1,7 @@
 package com.metao.examples.designpatterns.dp.cor;
 
+import java.io.IOException;
+
 public class ThrottlingMiddleware extends Middleware {
     private int requestPerMinute;
     private int request;
@@ -11,7 +13,7 @@ public class ThrottlingMiddleware extends Middleware {
     }
 
     /* Please, not that checkNext() call can be inserted both in the beginning of this method and in the end.. */
-    public boolean check(String email, String password) {
+    public boolean check(String email, String password) throws IOException {
         if (System.currentTimeMillis() > currentTime + 60_000) {
             request = 0;
             currentTime = System.currentTimeMillis();
@@ -21,7 +23,7 @@ public class ThrottlingMiddleware extends Middleware {
 
         if (request > requestPerMinute) {
             System.out.println("Request limit exceeded!");
-            Thread.currentThread().stop();
+            throw new IOException("Request limit exceeded!");
         }
         return checkNext(email, password);
     }

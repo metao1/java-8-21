@@ -2,7 +2,11 @@ package com.metao.examples.producerconsumer;
 
 import java.util.Random;
 import java.util.TimerTask;
-import java.util.concurrent.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -12,15 +16,16 @@ public class ProducerConsumerQueue {
 
     public static void main(String[] args) throws InterruptedException {
         DataInterface<Integer> dataHandler = new DataHandler<>();
-        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2, Executors.privilegedThreadFactory());
-        EventHandler<Integer> producerEventHandler = new ProducerEventHandler(dataHandler);
-        EventHandler<Integer> consumerEventHandler = new ConsumerEventHandler<>(dataHandler);
-        executorService.scheduleAtFixedRate(producerEventHandler, 0, 1, TimeUnit.SECONDS);
-        executorService.scheduleAtFixedRate(consumerEventHandler, 1, 1, TimeUnit.SECONDS);
-        executorService.awaitTermination(10, TimeUnit.SECONDS);
-        producerEventHandler.cancel();
-        consumerEventHandler.cancel();
-        executorService.shutdown();
+        try(ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2, Executors.defaultThreadFactory())) {
+            EventHandler<Integer> producerEventHandler = new ProducerEventHandler(dataHandler);
+            EventHandler<Integer> consumerEventHandler = new ConsumerEventHandler<>(dataHandler);
+            executorService.scheduleAtFixedRate(producerEventHandler, 0, 1, TimeUnit.SECONDS);
+            executorService.scheduleAtFixedRate(consumerEventHandler, 1, 1, TimeUnit.SECONDS);
+            executorService.awaitTermination(10, TimeUnit.SECONDS);
+            producerEventHandler.cancel();
+            consumerEventHandler.cancel();
+            executorService.shutdown();
+        }
     }
 
     private static class ConsumerEventHandler<T> extends EventHandler<T> {

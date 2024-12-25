@@ -1,5 +1,7 @@
 package com.metao.examples.designpatterns.dp.cor;
 
+import java.io.IOException;
+
 /* Base middleware class.*/
 public abstract class Middleware {
     private Middleware next;
@@ -12,11 +14,11 @@ public abstract class Middleware {
 
 
     /* Subclasses will implement this method with concrete checks.*/
-    public abstract boolean check(String email, String password);
+    public abstract boolean check(String email, String password) throws IOException;
 
     /* Runs check on the next object in chain or ends traversing if we're in */
     /* last object in chain.*/
-    protected boolean checkNext(String email, String password) {
+    protected boolean checkNext(String email, String password) throws IOException{
         if (next == null) {
             return true;
         }

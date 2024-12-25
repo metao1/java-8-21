@@ -1,5 +1,6 @@
 package com.metao.examples.designpatterns.dp.cor;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +15,7 @@ public class Server {
     }
 
     /**Server gets email and password from client and sends the authorization request to the chain.*/
-    public boolean logIn(String email, String password) {
+    public boolean logIn(String email, String password) throws IOException {
         if (middleware.check(email, password)) {
             System.out.println("Authorization have been successful!");
 

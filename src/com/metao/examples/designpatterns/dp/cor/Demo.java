@@ -33,7 +33,13 @@ public class Demo {
             String email = reader.readLine();
             System.out.print("Input password: ");
             String password = reader.readLine();
-            success = server.logIn(email, password);
+            try {
+                success = server.logIn(email, password);
+            } catch (IOException e) {
+                System.out.println("An error occurred: " + e.getMessage());
+                Thread.currentThread().interrupt();
+                return;
+            }
         } while (!success);
     }
 }

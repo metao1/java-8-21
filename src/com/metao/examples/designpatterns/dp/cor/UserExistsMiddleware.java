@@ -1,5 +1,7 @@
 package com.metao.examples.designpatterns.dp.cor;
 
+import java.io.IOException;
+
 /* ConcreteHandler. Checks whether a user with the given credentials exists.*/
 public class UserExistsMiddleware extends Middleware {
     private Server server;
@@ -8,7 +10,7 @@ public class UserExistsMiddleware extends Middleware {
         this.server = server;
     }
 
-    public boolean check(String email, String password) {
+    public boolean check(String email, String password) throws IOException {
         if (!server.hasEmail(email)) {
             System.out.println("This email is not registered!");
             return false;
