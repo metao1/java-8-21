@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.observer;
 
-import com.metao.examples.designpatterns.observer.Observer;
-
 import java.util.ArrayList;
 
 class Loan implements Subject {

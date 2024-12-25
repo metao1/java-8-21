@@ -1,11 +1,5 @@
 package com.metao.examples.designpatterns.composite;
 
-import com.metao.examples.designpatterns.composite.Circle;
-import com.metao.examples.designpatterns.composite.CompoundShape;
-import com.metao.examples.designpatterns.composite.Dot;
-import com.metao.examples.designpatterns.composite.ImageEditor;
-import com.metao.examples.designpatterns.composite.Rectangle;
-
 import java.awt.*;
 
 public class Main {

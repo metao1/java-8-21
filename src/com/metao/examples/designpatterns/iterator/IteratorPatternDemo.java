@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.iterator;
 
-import com.metao.examples.designpatterns.iterator.Iterator;
-import com.metao.examples.designpatterns.iterator.NameRepository;
-
 public class IteratorPatternDemo {
 
     public static void main(String[] args) {

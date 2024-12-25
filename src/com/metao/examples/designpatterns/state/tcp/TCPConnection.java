@@ -1,13 +1,5 @@
 package com.metao.examples.designpatterns.state.tcp;
 
-import com.metao.examples.designpatterns.state.tcp.Connection;
-import com.metao.examples.designpatterns.state.tcp.Packet;
-import com.metao.examples.designpatterns.state.tcp.State;
-import com.metao.examples.designpatterns.state.tcp.TCPClose;
-import com.metao.examples.designpatterns.state.tcp.TCPEstablish;
-import com.metao.examples.designpatterns.state.tcp.TCPListen;
-import com.metao.examples.designpatterns.state.tcp.TCPState;
-
 public class TCPConnection {
 
     private TCPState tcpState;

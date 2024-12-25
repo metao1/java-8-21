@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.solid.fixed;
 
-import com.metao.examples.designpatterns.solid.fixed.Keyboard;
-import com.metao.examples.designpatterns.solid.fixed.Monitor;
-
 public class Windows98Machine {
 
     private final com.metao.examples.designpatterns.solid.fixed.Keyboard keyboard;

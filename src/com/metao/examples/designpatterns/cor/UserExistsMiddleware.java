@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.cor;
 
-import com.metao.examples.designpatterns.cor.Middleware;
-import com.metao.examples.designpatterns.cor.Server;
-
 import java.io.IOException;
 
 /* ConcreteHandler. Checks whether a user with the given credentials exists.*/

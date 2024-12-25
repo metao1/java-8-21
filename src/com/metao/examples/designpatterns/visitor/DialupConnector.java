@@ -1,9 +1,5 @@
 package com.metao.examples.designpatterns.visitor;
 
-import com.metao.examples.designpatterns.visitor.Connector;
-import com.metao.examples.designpatterns.visitor.Modem;
-import com.metao.examples.designpatterns.visitor.SettingType;
-
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class DialupConnector implements Connector {

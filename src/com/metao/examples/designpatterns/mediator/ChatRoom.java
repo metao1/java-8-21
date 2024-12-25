@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.mediator;
 
-import com.metao.examples.designpatterns.mediator.User;
-
 import java.util.Date;
 
 public class ChatRoom {

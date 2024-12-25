@@ -1,9 +1,5 @@
 package com.metao.examples.designpatterns.observer;
 
-import com.metao.examples.designpatterns.observer.Internet;
-import com.metao.examples.designpatterns.observer.Loan;
-import com.metao.examples.designpatterns.observer.Newspaper;
-
 public class ObserverTest {
 
     public static void main(String[] args) {

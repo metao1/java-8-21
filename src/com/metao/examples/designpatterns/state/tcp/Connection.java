@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.state.tcp;
 
-import com.metao.examples.designpatterns.state.tcp.Packet;
-import com.metao.examples.designpatterns.state.tcp.State;
-
 public class Connection {
     private com.metao.examples.designpatterns.state.tcp.State state = com.metao.examples.designpatterns.state.tcp.State.CLOSED;
 

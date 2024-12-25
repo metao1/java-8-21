@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.saga.orchestration.ChapterResult;
-
 /**
  * OrchestrationChapter is an interface representing a contract for an external service.
  *

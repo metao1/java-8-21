@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.lsp.bad_practice;
 
-import com.metao.examples.designpatterns.lsp.bad_practice.AdvancedRecommender;
-
 public class ArticleProcessor {
 
         void buildMainPage(AbstractRecommender recommender) {

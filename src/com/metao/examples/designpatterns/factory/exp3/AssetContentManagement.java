@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp3;
 
-import com.metao.examples.designpatterns.factory.exp3.ContentManagement;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

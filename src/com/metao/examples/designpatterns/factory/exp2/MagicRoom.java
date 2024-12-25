@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp2;
 
-import com.metao.examples.designpatterns.factory.exp2.Room;
-
 public class MagicRoom implements com.metao.examples.designpatterns.factory.exp2.Room {
 
     @Override

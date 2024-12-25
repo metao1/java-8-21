@@ -1,8 +1,10 @@
 package com.metao.examples.designpatterns.decorator;
 
-import com.metao.examples.designpatterns.decorator.DataSource;
-
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStream;
 
 public class FileDataSource implements DataSource<String> {
     private final String path;

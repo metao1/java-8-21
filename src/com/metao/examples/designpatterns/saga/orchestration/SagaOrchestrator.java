@@ -1,11 +1,10 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.saga.orchestration.Saga;
 import com.metao.examples.designpatterns.saga.orchestration.Saga.Result;
-import com.metao.examples.designpatterns.saga.orchestration.ServiceDiscoveryService;
-import com.metao.examples.designpatterns.saga.orchestration.Subject;
 
-import static com.metao.examples.designpatterns.saga.orchestration.Saga.Result.*;
+import static com.metao.examples.designpatterns.saga.orchestration.Saga.Result.CRASHED;
+import static com.metao.examples.designpatterns.saga.orchestration.Saga.Result.FINISHED;
+import static com.metao.examples.designpatterns.saga.orchestration.Saga.Result.ROLLBACK;
 
 public class SagaOrchestrator {
   private final com.metao.examples.designpatterns.saga.orchestration.Saga saga;

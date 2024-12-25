@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.proxy;
 
-import com.metao.examples.designpatterns.proxy.YouTubeDownloader;
-
 public class Demo {
 
     public static void main(String[] args) {

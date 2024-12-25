@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.memento;
 
-import com.metao.examples.designpatterns.memento.DietInfo;
-import com.metao.examples.designpatterns.memento.DietInfoCaretaker;
-
 public class MementoDemo {
 
 	public static void main(String[] args) {

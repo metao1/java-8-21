@@ -1,9 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp3;
 
-import com.metao.examples.designpatterns.factory.exp3.FakeInArticleRecoRender;
-import com.metao.examples.designpatterns.factory.exp3.InArticleReco;
-import com.metao.examples.designpatterns.factory.exp3.RealInArticleRecoRender;
-
 public class ArticleManagementExample {
 
     public static void main(String[] args) {

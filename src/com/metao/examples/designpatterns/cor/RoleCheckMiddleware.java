@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.cor;
 
-import com.metao.examples.designpatterns.cor.Middleware;
-
 import java.io.IOException;
 
 /* ConcreteHandler. Checks a user's role.*/

@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp1;
 
-import com.metao.examples.designpatterns.factory.exp1.WindowsDialog;
-
 public class Demo extends WindowsDialog {
     private static Dialog dialog;
 

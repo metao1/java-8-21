@@ -1,10 +1,5 @@
 package com.metao.examples.designpatterns.state;
 
-import com.metao.examples.designpatterns.state.PauseState;
-import com.metao.examples.designpatterns.state.Player;
-import com.metao.examples.designpatterns.state.PlayingState;
-import com.metao.examples.designpatterns.state.State;
-
 public class ReadyState extends State {
 
     public ReadyState(Player player) {

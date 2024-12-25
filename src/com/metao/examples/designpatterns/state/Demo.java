@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.state;
 
-import com.metao.examples.designpatterns.state.Player;
-import com.metao.examples.designpatterns.state.UI;
-
 /**
  * Demo class. Everything comes together here.
  */

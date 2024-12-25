@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.abstractfactory;
 
-import com.metao.examples.designpatterns.abstractfactory.Computer;
-import com.metao.examples.designpatterns.abstractfactory.PC;
-
 public class PCFactory implements ComputerAbstractFactory {
 
     private String ram;

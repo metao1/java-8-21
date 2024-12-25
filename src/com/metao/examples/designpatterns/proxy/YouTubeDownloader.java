@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.proxy;
 
-import com.metao.examples.designpatterns.proxy.Video;
-
 import java.util.HashMap;
 
 public class YouTubeDownloader {

@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.visitor;
 
-import com.metao.examples.designpatterns.visitor.Configuration;
-import com.metao.examples.designpatterns.visitor.Modem;
-
 public class Demo {
     public static void main(String[] args) {
         Modem modem = new TpLinkModem(((modem1, configuration) -> {

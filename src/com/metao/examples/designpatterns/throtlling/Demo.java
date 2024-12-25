@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.throtlling;
 
-import com.metao.examples.designpatterns.throtlling.CallsCount;
-import com.metao.examples.designpatterns.throtlling.Tenant;
-
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;

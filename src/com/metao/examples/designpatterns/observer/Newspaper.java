@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.observer;
 
-import com.metao.examples.designpatterns.observer.Observer;
-
 class Newspaper implements com.metao.examples.designpatterns.observer.Observer {
        @Override
        public void update(float interest) {

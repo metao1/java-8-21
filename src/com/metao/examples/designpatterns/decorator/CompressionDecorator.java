@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.decorator;
 
-import com.metao.examples.designpatterns.decorator.DataSource;
-import com.metao.examples.designpatterns.decorator.DataSourceDecorator;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

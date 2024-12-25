@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.iterator;
 
-import com.metao.examples.designpatterns.iterator.Container;
-import com.metao.examples.designpatterns.iterator.Iterator;
-
 public class NameRepository implements Container {
     public String[] names = {"Robert", "John", "Julie", "Lora"};
 

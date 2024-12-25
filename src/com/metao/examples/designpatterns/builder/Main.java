@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.builder;
 
-import com.metao.examples.designpatterns.builder.Hero;
-
 public class Main {
     public static void main(String[] args) {
         com.metao.examples.designpatterns.builder.Hero crazyFrog = Hero.HeroBuilder

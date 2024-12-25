@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.adapter.exp1;
 
-import com.metao.examples.designpatterns.adapter.exp1.Mp3;
-import com.metao.examples.designpatterns.adapter.exp1.Mp4;
-
 public class Demo {
 
     public static void main(String[] args) {

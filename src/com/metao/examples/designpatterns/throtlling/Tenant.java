@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.throtlling;
 
-import com.metao.examples.designpatterns.throtlling.CallsCount;
-
 import java.security.InvalidParameterException;
 
 public class Tenant {

@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.flyweight;
 
-import com.metao.examples.designpatterns.flyweight.TreeType;
-
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;

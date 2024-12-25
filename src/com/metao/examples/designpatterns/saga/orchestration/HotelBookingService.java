@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.saga.orchestration.ChapterResult;
-import com.metao.examples.designpatterns.saga.orchestration.Service;
-
 public class HotelBookingService extends Service<String> {
 
   @Override

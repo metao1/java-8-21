@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.command;
 
-import com.metao.examples.designpatterns.command.Command;
-
 import java.util.Stack;
 
 public class CommandHistory {

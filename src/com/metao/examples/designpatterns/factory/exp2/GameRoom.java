@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp2;
 
-import com.metao.examples.designpatterns.factory.exp2.Room;
-
 import java.util.LinkedList;
 import java.util.List;
 

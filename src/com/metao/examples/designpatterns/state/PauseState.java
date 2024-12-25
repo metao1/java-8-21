@@ -1,9 +1,5 @@
 package com.metao.examples.designpatterns.state;
 
-import com.metao.examples.designpatterns.state.Player;
-import com.metao.examples.designpatterns.state.ReadyState;
-import com.metao.examples.designpatterns.state.State;
-
 /**
  * Concrete states provide the special implementation for all interface methods.
  */

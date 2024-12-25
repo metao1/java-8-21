@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.state.tcp;
 
-import com.metao.examples.designpatterns.state.tcp.Packet;
-
 public class TCPClose implements TCPState {
     private final Connection connection;
 

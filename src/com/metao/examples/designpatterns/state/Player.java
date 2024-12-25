@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.state;
 
-import com.metao.examples.designpatterns.state.ReadyState;
-import com.metao.examples.designpatterns.state.State;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,10 +1,5 @@
 package com.metao.examples.designpatterns.abstractfactory;
 
-import com.metao.examples.designpatterns.abstractfactory.Computer;
-import com.metao.examples.designpatterns.abstractfactory.ComputerFactory;
-import com.metao.examples.designpatterns.abstractfactory.PCFactory;
-import com.metao.examples.designpatterns.abstractfactory.ServerFactory;
-
 public class TestDesignPatterns {
 
     public static void main(String[] args) {

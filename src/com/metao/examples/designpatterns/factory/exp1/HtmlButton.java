@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp1;
 
-import com.metao.examples.designpatterns.factory.exp1.Button;
-
 public class HtmlButton implements Button {
 
     public void render() {

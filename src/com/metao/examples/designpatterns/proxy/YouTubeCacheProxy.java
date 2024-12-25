@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.proxy;
 
-import com.metao.examples.designpatterns.proxy.ThirdPartyYouTubeClass;
-import com.metao.examples.designpatterns.proxy.Video;
-
 import java.util.HashMap;
 
 public class YouTubeCacheProxy implements ThirdPartyYouTubeLib {

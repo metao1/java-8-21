@@ -2,7 +2,6 @@ package com.metao.examples.designpatterns.lsp.prefect_example.model;
 
 import com.metao.examples.designpatterns.lsp.prefect_example.exception.PaymentFailedException;
 import com.metao.examples.designpatterns.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
-import com.metao.examples.designpatterns.lsp.prefect_example.model.PaymentResponse;
 import com.metao.examples.designpatterns.lsp.prefect_example.service.PaymentInstrument;
 
 public class RewardsCard implements PaymentInstrument {

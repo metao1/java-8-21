@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.command;
 
-import com.metao.examples.designpatterns.command.Command;
-import com.metao.examples.designpatterns.command.Editor;
-
 public class PasteCommand extends Command {
 
     public PasteCommand(Editor editor) {

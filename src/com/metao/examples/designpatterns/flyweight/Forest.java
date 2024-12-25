@@ -1,9 +1,5 @@
 package com.metao.examples.designpatterns.flyweight;
 
-import com.metao.examples.designpatterns.flyweight.Tree;
-import com.metao.examples.designpatterns.flyweight.TreeFactory;
-import com.metao.examples.designpatterns.flyweight.TreeType;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

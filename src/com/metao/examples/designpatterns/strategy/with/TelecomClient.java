@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.strategy.with;
 
-import com.metao.examples.designpatterns.strategy.with.BasicPlan;
-import com.metao.examples.designpatterns.strategy.with.SuperPlan;
-
 public class TelecomClient {
 
     private static final TelecomOperator operator = new TelecomOperator();

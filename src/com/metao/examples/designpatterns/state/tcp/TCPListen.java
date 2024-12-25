@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.state.tcp;
 
-import com.metao.examples.designpatterns.state.tcp.Packet;
-import com.metao.examples.designpatterns.state.tcp.TCPState;
-
 public class TCPListen implements TCPState {
     private final Connection connection;
 

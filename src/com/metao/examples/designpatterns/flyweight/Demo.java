@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.flyweight;
 
-import com.metao.examples.designpatterns.flyweight.Forest;
-
 import java.awt.*;
 
 public class Demo {

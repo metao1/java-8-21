@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.lazyloading;
 
-import com.metao.examples.designpatterns.lazyloading.Heavy;
-
 import java.util.function.Supplier;
 
 public class Java8Holder {

@@ -1,9 +1,9 @@
 package com.metao.examples.designpatterns.lsp.prefect_example.service;
 
+import com.metao.examples.designpatterns.lsp.prefect_example.exception.PaymentFailedException;
+
 import java.util.Date;
 import java.util.UUID;
-
-import com.metao.examples.designpatterns.lsp.prefect_example.exception.PaymentFailedException;
 
 public class PaymentGateway {
     public String process(String name, String cardNumber, String verificationCode, Date expiryDate) throws PaymentFailedException {

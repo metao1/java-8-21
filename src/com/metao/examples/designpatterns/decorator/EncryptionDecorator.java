@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.decorator;
 
-import com.metao.examples.designpatterns.decorator.DataSource;
-import com.metao.examples.designpatterns.decorator.DataSourceDecorator;
-
 import java.util.Base64;
 
 public class EncryptionDecorator extends DataSourceDecorator {

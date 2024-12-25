@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.lazyloading;
 
-import com.metao.examples.designpatterns.lazyloading.Heavy;
-
 public class HolderThreadSafe {
 
   private com.metao.examples.designpatterns.lazyloading.Heavy heavy;

@@ -1,9 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp2;
 
-import com.metao.examples.designpatterns.factory.exp2.BasicGame;
-import com.metao.examples.designpatterns.factory.exp2.GameRoom;
-import com.metao.examples.designpatterns.factory.exp2.PremiumRoom;
-
 public class FactoryDesignPattern {
 
 

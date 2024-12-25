@@ -1,8 +1,8 @@
 package com.metao.examples.designpatterns.lsp.prefect_example.service;
 
-import java.util.Date;
-
 import com.metao.examples.designpatterns.lsp.prefect_example.exception.FraudDetectedException;
+
+import java.util.Date;
 
 public class ThirdPartyFraudDetectionSystem {
     public void process(String name, String cardNumber, String verificationCode, Date expiryDate) throws FraudDetectedException {

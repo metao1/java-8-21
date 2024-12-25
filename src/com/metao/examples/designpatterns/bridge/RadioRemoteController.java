@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.bridge;
 
-import com.metao.examples.designpatterns.bridge.Device;
-import com.metao.examples.designpatterns.bridge.Remote;
-
 public class RadioRemoteController implements Remote {
 
     protected com.metao.examples.designpatterns.bridge.Device device;

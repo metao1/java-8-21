@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.strategy.with;
 
-import com.metao.examples.designpatterns.strategy.with.PlanStrategy;
-
 public class TelecomOperator {
     private com.metao.examples.designpatterns.strategy.with.PlanStrategy plan;
 

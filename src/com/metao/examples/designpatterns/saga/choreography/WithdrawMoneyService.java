@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.saga.choreography;
 
-import com.metao.examples.designpatterns.saga.choreography.Saga;
-import com.metao.examples.designpatterns.saga.choreography.Service;
-
 public class WithdrawMoneyService extends Service {
 
   public WithdrawMoneyService(ServiceDiscoveryService service) {

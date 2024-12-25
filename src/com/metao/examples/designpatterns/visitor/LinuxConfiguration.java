@@ -1,9 +1,5 @@
 package com.metao.examples.designpatterns.visitor;
 
-import com.metao.examples.designpatterns.visitor.Configuration;
-import com.metao.examples.designpatterns.visitor.Modem;
-import com.metao.examples.designpatterns.visitor.OSType;
-
 public class LinuxConfiguration implements Configuration {
 
     @Override

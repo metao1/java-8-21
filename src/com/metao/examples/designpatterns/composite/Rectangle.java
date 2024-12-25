@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.composite;
 
-import com.metao.examples.designpatterns.composite.BaseShape;
-
 import java.awt.*;
 
 public class Rectangle extends BaseShape {

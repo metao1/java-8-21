@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.saga.choreography;
 
-import com.metao.examples.designpatterns.saga.choreography.OrderService;
-import com.metao.examples.designpatterns.saga.choreography.Saga;
-
 public class SagaApplication {
 
   /**

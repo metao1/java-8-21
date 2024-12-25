@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.ami;
 
-import com.metao.examples.designpatterns.ami.AsyncCallback;
-import com.metao.examples.designpatterns.ami.AsyncResult;
-
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 

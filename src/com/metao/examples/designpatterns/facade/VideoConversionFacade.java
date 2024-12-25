@@ -1,13 +1,5 @@
 package com.metao.examples.designpatterns.facade;
 
-import com.metao.examples.designpatterns.facade.AudioMixer;
-import com.metao.examples.designpatterns.facade.BitrateReader;
-import com.metao.examples.designpatterns.facade.Codec;
-import com.metao.examples.designpatterns.facade.CodecFactory;
-import com.metao.examples.designpatterns.facade.MPEG4CompressionCodec;
-import com.metao.examples.designpatterns.facade.OggCompressionCodec;
-import com.metao.examples.designpatterns.facade.VideoFile;
-
 import java.io.File;
 
 public class VideoConversionFacade {

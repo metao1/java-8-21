@@ -1,7 +1,5 @@
 package com.metao.examples.designpatterns.composite;
 
-import com.metao.examples.designpatterns.composite.Shape;
-
 import java.awt.*;
 
 public class BaseShape implements Shape {

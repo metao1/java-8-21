@@ -1,9 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp1;
 
-import com.metao.examples.designpatterns.factory.exp1.Button;
-import com.metao.examples.designpatterns.factory.exp1.Dialog;
-import com.metao.examples.designpatterns.factory.exp1.HtmlButton;
-
 public class HtmlDialog extends Dialog {
 
     @Override

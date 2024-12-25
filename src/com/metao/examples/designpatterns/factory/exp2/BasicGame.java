@@ -1,8 +1,5 @@
 package com.metao.examples.designpatterns.factory.exp2;
 
-import com.metao.examples.designpatterns.factory.exp2.GameRoom;
-import com.metao.examples.designpatterns.factory.exp2.Room;
-
 class BasicGame extends GameRoom {
 
     @Override
