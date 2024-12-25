@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.decorator;
 
-public class DataSourceDecorator implements com.metao.examples.designpatterns.decorator.DataSource<String> {
-    private final com.metao.examples.designpatterns.decorator.DataSource<String> wrappee;
+public class DataSourceDecorator implements DataSource<String> {
+    private final DataSource<String> wrappee;
 
     DataSourceDecorator(DataSource<String> source) {
         this.wrappee = source;

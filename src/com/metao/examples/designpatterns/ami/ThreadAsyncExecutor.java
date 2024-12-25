@@ -10,12 +10,12 @@ public class ThreadAsyncExecutor implements AsyncExecutor {
     private final AtomicInteger idx = new AtomicInteger(0);
 
     @Override
-    public <T> com.metao.examples.designpatterns.ami.AsyncResult<T> startProcess(Callable<T> task) {
+    public <T> AsyncResult<T> startProcess(Callable<T> task) {
         return startProcess(task, null);
     }
 
     @Override
-    public <T> com.metao.examples.designpatterns.ami.AsyncResult<T> startProcess(Callable<T> task, com.metao.examples.designpatterns.ami.AsyncCallback<T> ac) {
+    public <T> AsyncResult<T> startProcess(Callable<T> task, AsyncCallback<T> ac) {
         var result = new CompletableResult<>(ac);
         new Thread(() -> {
             try {
@@ -28,7 +28,7 @@ public class ThreadAsyncExecutor implements AsyncExecutor {
     }
 
     @Override
-    public <T> T endProcess(com.metao.examples.designpatterns.ami.AsyncResult<T> asyncResult) throws ExecutionException, InterruptedException {
+    public <T> T endProcess(AsyncResult<T> asyncResult) throws ExecutionException, InterruptedException {
         if (!asyncResult.isCompleted()) {
             asyncResult.await();
         }
@@ -42,7 +42,7 @@ public class ThreadAsyncExecutor implements AsyncExecutor {
 
         private final Object lock;
 
-        private final Optional<com.metao.examples.designpatterns.ami.AsyncCallback<T>> callback;
+        private final Optional<AsyncCallback<T>> callback;
 
         private volatile int state;
 

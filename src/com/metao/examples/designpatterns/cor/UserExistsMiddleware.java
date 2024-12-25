@@ -4,7 +4,7 @@ import java.io.IOException;
 
 /* ConcreteHandler. Checks whether a user with the given credentials exists.*/
 public class UserExistsMiddleware extends Middleware {
-    private com.metao.examples.designpatterns.cor.Server server;
+    private Server server;
 
     public UserExistsMiddleware(Server server) {
         this.server = server;

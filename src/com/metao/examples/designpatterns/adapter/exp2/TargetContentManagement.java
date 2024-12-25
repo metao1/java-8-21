@@ -1,8 +1,8 @@
 package com.metao.examples.designpatterns.adapter.exp2;
 
-public class TargetContentManagement implements com.metao.examples.designpatterns.adapter.exp2.AdapteeMedia {
+public class TargetContentManagement implements AdapteeMedia {
 
-    private final com.metao.examples.designpatterns.adapter.exp2.AdapteeMedia media;
+    private final AdapteeMedia media;
 
     public TargetContentManagement(AdapteeMedia media) {
         this.media = media;

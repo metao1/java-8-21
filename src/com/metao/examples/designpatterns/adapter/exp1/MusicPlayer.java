@@ -1,8 +1,8 @@
 package com.metao.examples.designpatterns.adapter.exp1;
 
-public class MusicPlayer implements com.metao.examples.designpatterns.adapter.exp1.Music {
+public class MusicPlayer implements Music {
 
-    private final com.metao.examples.designpatterns.adapter.exp1.Music music;
+    private final Music music;
 
     MusicPlayer(Music music) {
         this.music = music;

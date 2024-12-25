@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.command;
 
 public abstract class Command {
-    public com.metao.examples.designpatterns.command.Editor editor;
+    public Editor editor;
     private String backup;
 
     Command(Editor editor) {

@@ -2,9 +2,10 @@ package com.metao.examples.designpatterns.bridge;
 
 public class RadioRemoteController implements Remote {
 
-    protected com.metao.examples.designpatterns.bridge.Device device;
+    protected Device device;
 
-    public RadioRemoteController() {}
+    public RadioRemoteController() {
+    }
 
     public RadioRemoteController(Device device) {
         this.device = device;

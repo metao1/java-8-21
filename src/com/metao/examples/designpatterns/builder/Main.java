@@ -2,7 +2,7 @@ package com.metao.examples.designpatterns.builder;
 
 public class Main {
     public static void main(String[] args) {
-        com.metao.examples.designpatterns.builder.Hero crazyFrog = Hero.HeroBuilder
+        Hero crazyFrog = Hero.HeroBuilder
                 .builder("Crazy Frog", "fighter")
                 .hairColor("Black")
                 .armor("Knife")
