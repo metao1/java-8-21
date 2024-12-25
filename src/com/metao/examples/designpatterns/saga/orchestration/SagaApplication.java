@@ -1,8 +1,8 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.dp.saga.orchestration.OrderService;
-import com.metao.examples.designpatterns.dp.saga.orchestration.Saga;
-import com.metao.examples.designpatterns.dp.saga.orchestration.SagaOrchestrator;
+import com.metao.examples.designpatterns.saga.orchestration.OrderService;
+import com.metao.examples.designpatterns.saga.orchestration.Saga;
+import com.metao.examples.designpatterns.saga.orchestration.SagaOrchestrator;
 
 public class SagaApplication {
 
@@ -12,16 +12,16 @@ public class SagaApplication {
   public static void main(String[] args) {
     var sagaOrchestrator = new SagaOrchestrator(newSaga(), serviceDiscovery());
 
-    com.metao.examples.designpatterns.dp.saga.orchestration.Saga.Result goodOrder = sagaOrchestrator.execute("good_order");
-    com.metao.examples.designpatterns.dp.saga.orchestration.Saga.Result badOrder = sagaOrchestrator.execute("bad_order");
-    com.metao.examples.designpatterns.dp.saga.orchestration.Saga.Result crashedOrder = sagaOrchestrator.execute("crashed_order");
+    com.metao.examples.designpatterns.saga.orchestration.Saga.Result goodOrder = sagaOrchestrator.execute("good_order");
+    com.metao.examples.designpatterns.saga.orchestration.Saga.Result badOrder = sagaOrchestrator.execute("bad_order");
+    com.metao.examples.designpatterns.saga.orchestration.Saga.Result crashedOrder = sagaOrchestrator.execute("crashed_order");
 
     System.out.printf("orders: goodOrder is %s, badOrder is %s,crashedOrder is %s%n",
             goodOrder, badOrder, crashedOrder);
   }
 
 
-  private static com.metao.examples.designpatterns.dp.saga.orchestration.Saga newSaga() {
+  private static com.metao.examples.designpatterns.saga.orchestration.Saga newSaga() {
     return Saga
             .create()
             .chapter("init an order")

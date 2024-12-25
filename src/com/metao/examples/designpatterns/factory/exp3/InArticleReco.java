@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.factory.exp3;
 
-import com.metao.examples.designpatterns.dp.factory.exp3.Recommendation;
+import com.metao.examples.designpatterns.factory.exp3.Recommendation;
 
 abstract class InArticleReco {
 

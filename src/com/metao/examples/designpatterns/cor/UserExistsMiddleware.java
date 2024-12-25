@@ -1,13 +1,13 @@
 package com.metao.examples.designpatterns.cor;
 
-import com.metao.examples.designpatterns.dp.cor.Middleware;
-import com.metao.examples.designpatterns.dp.cor.Server;
+import com.metao.examples.designpatterns.cor.Middleware;
+import com.metao.examples.designpatterns.cor.Server;
 
 import java.io.IOException;
 
 /* ConcreteHandler. Checks whether a user with the given credentials exists.*/
 public class UserExistsMiddleware extends Middleware {
-    private com.metao.examples.designpatterns.dp.cor.Server server;
+    private com.metao.examples.designpatterns.cor.Server server;
 
     public UserExistsMiddleware(Server server) {
         this.server = server;

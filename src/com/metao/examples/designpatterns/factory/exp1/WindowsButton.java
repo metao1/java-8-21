@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.factory.exp1;
 
-import com.metao.examples.designpatterns.dp.factory.exp1.Button;
+import com.metao.examples.designpatterns.factory.exp1.Button;
 
 import javax.swing.*;
 import java.awt.*;

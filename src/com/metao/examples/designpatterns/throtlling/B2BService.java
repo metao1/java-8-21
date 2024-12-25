@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.throtlling;
 
-import com.metao.examples.designpatterns.dp.throtlling.Tenant;
-import com.metao.examples.designpatterns.dp.throtlling.Throttler;
+import com.metao.examples.designpatterns.throtlling.Tenant;
+import com.metao.examples.designpatterns.throtlling.Throttler;
 
 import java.util.concurrent.ThreadLocalRandom;
 

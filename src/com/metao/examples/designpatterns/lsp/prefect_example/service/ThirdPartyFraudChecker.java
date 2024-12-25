@@ -2,9 +2,9 @@ package com.metao.examples.designpatterns.lsp.prefect_example.service;
 
 import java.util.Date;
 
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.exception.FraudDetectedException;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.service.FraudChecker;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.service.ThirdPartyFraudDetectionSystem;
+import com.metao.examples.designpatterns.lsp.prefect_example.exception.FraudDetectedException;
+import com.metao.examples.designpatterns.lsp.prefect_example.service.FraudChecker;
+import com.metao.examples.designpatterns.lsp.prefect_example.service.ThirdPartyFraudDetectionSystem;
 
 public class ThirdPartyFraudChecker implements FraudChecker {
   String name;

@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.saga.choreography;
 
-import com.metao.examples.designpatterns.dp.saga.choreography.Saga;
+import com.metao.examples.designpatterns.saga.choreography.Saga;
 
 import java.util.function.Supplier;
 
@@ -18,7 +18,7 @@ public abstract class Service implements ChoreographyChapter {
   }
 
   @Override
-  public com.metao.examples.designpatterns.dp.saga.choreography.Saga execute(com.metao.examples.designpatterns.dp.saga.choreography.Saga saga) {
+  public com.metao.examples.designpatterns.saga.choreography.Saga execute(com.metao.examples.designpatterns.saga.choreography.Saga saga) {
     var nextSaga = saga;
     Object nextVal;
     var chapterName = saga.getCurrent().getName();
@@ -55,22 +55,22 @@ public abstract class Service implements ChoreographyChapter {
   }
 
   @Override
-  public com.metao.examples.designpatterns.dp.saga.choreography.Saga process(com.metao.examples.designpatterns.dp.saga.choreography.Saga saga) {
+  public com.metao.examples.designpatterns.saga.choreography.Saga process(com.metao.examples.designpatterns.saga.choreography.Saga saga) {
     var inValue = saga.getCurrentValue();
     System.out.printf("The chapter '%s' has been started. "
                     + "The data %s has been stored or calculated successfully.%n", getName(), inValue);
-    saga.setCurrentStatus(com.metao.examples.designpatterns.dp.saga.choreography.Saga.ChapterResult.SUCCESS);
+    saga.setCurrentStatus(com.metao.examples.designpatterns.saga.choreography.Saga.ChapterResult.SUCCESS);
     saga.setCurrentValue(inValue);
     return saga;
   }
 
   @Override
-  public com.metao.examples.designpatterns.dp.saga.choreography.Saga rollback(com.metao.examples.designpatterns.dp.saga.choreography.Saga saga) {
+  public com.metao.examples.designpatterns.saga.choreography.Saga rollback(com.metao.examples.designpatterns.saga.choreography.Saga saga) {
     var inValue = saga.getCurrentValue();
     System.out.printf("The Rollback for a chapter '%s' has been started. "
                     + "The data %s has been rollbacked successfully%n", getName(), inValue);
 
-    saga.setCurrentStatus(com.metao.examples.designpatterns.dp.saga.choreography.Saga.ChapterResult.ROLLBACK);
+    saga.setCurrentStatus(com.metao.examples.designpatterns.saga.choreography.Saga.ChapterResult.ROLLBACK);
     saga.setCurrentValue(inValue);
     return saga;
   }

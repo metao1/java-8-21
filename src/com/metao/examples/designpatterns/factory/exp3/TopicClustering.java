@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.factory.exp3;
 
-import com.metao.examples.designpatterns.dp.factory.exp3.Recommendation;
+import com.metao.examples.designpatterns.factory.exp3.Recommendation;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-class TopicClustering implements com.metao.examples.designpatterns.dp.factory.exp3.Recommendation {
+class TopicClustering implements com.metao.examples.designpatterns.factory.exp3.Recommendation {
 
 
     @Override

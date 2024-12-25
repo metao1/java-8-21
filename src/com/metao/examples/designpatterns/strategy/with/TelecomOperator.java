@@ -1,9 +1,9 @@
 package com.metao.examples.designpatterns.strategy.with;
 
-import com.metao.examples.designpatterns.dp.strategy.with.PlanStrategy;
+import com.metao.examples.designpatterns.strategy.with.PlanStrategy;
 
 public class TelecomOperator {
-    private com.metao.examples.designpatterns.dp.strategy.with.PlanStrategy plan;
+    private com.metao.examples.designpatterns.strategy.with.PlanStrategy plan;
 
     public void activatePlan (PlanStrategy strategy) {
         this.plan = strategy;

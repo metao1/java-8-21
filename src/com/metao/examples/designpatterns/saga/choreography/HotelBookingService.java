@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.saga.choreography;
 
-import com.metao.examples.designpatterns.dp.saga.choreography.Service;
+import com.metao.examples.designpatterns.saga.choreography.Service;
 
 public class HotelBookingService extends Service {
   public HotelBookingService(ServiceDiscoveryService service) {

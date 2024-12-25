@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.dp.saga.orchestration.ChapterResult;
-import com.metao.examples.designpatterns.dp.saga.orchestration.Service;
+import com.metao.examples.designpatterns.saga.orchestration.ChapterResult;
+import com.metao.examples.designpatterns.saga.orchestration.Service;
 
 public class OrderService extends Service<String> {
   @Override

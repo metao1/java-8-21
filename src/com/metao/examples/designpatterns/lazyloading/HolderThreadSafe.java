@@ -1,10 +1,10 @@
 package com.metao.examples.designpatterns.lazyloading;
 
-import com.metao.examples.designpatterns.dp.lazyloading.Heavy;
+import com.metao.examples.designpatterns.lazyloading.Heavy;
 
 public class HolderThreadSafe {
 
-  private com.metao.examples.designpatterns.dp.lazyloading.Heavy heavy;
+  private com.metao.examples.designpatterns.lazyloading.Heavy heavy;
 
   /**
    * Constructor.
@@ -16,7 +16,7 @@ public class HolderThreadSafe {
   /**
    * Get heavy object.
    */
-  public synchronized com.metao.examples.designpatterns.dp.lazyloading.Heavy getHeavy() {
+  public synchronized com.metao.examples.designpatterns.lazyloading.Heavy getHeavy() {
     if (heavy == null) {
       heavy = new Heavy();
     }

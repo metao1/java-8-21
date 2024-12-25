@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.visitor;
 
-import com.metao.examples.designpatterns.dp.visitor.Configuration;
-import com.metao.examples.designpatterns.dp.visitor.Modem;
+import com.metao.examples.designpatterns.visitor.Configuration;
+import com.metao.examples.designpatterns.visitor.Modem;
 
 public interface ConfigurationCallback {
 

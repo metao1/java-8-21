@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.bridge;
 
-import com.metao.examples.designpatterns.dp.bridge.TV;
+import com.metao.examples.designpatterns.bridge.TV;
 
 public class Demo {
     public static void main(String[] args) {

@@ -1,13 +1,13 @@
 package com.metao.examples.designpatterns.state;
 
-import com.metao.examples.designpatterns.dp.state.ReadyState;
-import com.metao.examples.designpatterns.dp.state.State;
+import com.metao.examples.designpatterns.state.ReadyState;
+import com.metao.examples.designpatterns.state.State;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    private com.metao.examples.designpatterns.dp.state.State state;
+    private com.metao.examples.designpatterns.state.State state;
     private boolean playing = false;
     private List<String> playlist = new ArrayList<>();
     private int currentTrack = 0;
@@ -20,7 +20,7 @@ public class Player {
         }
     }
 
-    public void changeState(com.metao.examples.designpatterns.dp.state.State state) {
+    public void changeState(com.metao.examples.designpatterns.state.State state) {
         this.state = state;
     }
 

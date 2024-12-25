@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.throtlling;
 
-import com.metao.examples.designpatterns.dp.throtlling.CallsCount;
+import com.metao.examples.designpatterns.throtlling.CallsCount;
 
 import java.security.InvalidParameterException;
 

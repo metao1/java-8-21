@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.composite;
 
-import com.metao.examples.designpatterns.dp.composite.BaseShape;
+import com.metao.examples.designpatterns.composite.BaseShape;
 
 import java.awt.*;
 

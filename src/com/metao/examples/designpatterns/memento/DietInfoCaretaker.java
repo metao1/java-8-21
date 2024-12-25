@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.memento;
 
-import com.metao.examples.designpatterns.dp.memento.DietInfo;
+import com.metao.examples.designpatterns.memento.DietInfo;
 
 // caretaker - saves and restores a DietInfo object's state via a memento
 // note that DietInfo.Memento isn't visible to the caretaker so we need to cast the memento to Object
@@ -8,7 +8,7 @@ public class DietInfoCaretaker {
 
 	Object objMemento;
 
-	public void saveState(com.metao.examples.designpatterns.dp.memento.DietInfo dietInfo) {
+	public void saveState(com.metao.examples.designpatterns.memento.DietInfo dietInfo) {
 		objMemento = dietInfo.save();
 	}
 

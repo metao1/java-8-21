@@ -1,17 +1,17 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.dp.saga.orchestration.Observer;
-import com.metao.examples.designpatterns.dp.saga.orchestration.Subject;
+import com.metao.examples.designpatterns.saga.orchestration.Observer;
+import com.metao.examples.designpatterns.saga.orchestration.Subject;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class StringObserverHandler implements Subject<String> {
 
-    private final Queue<com.metao.examples.designpatterns.dp.saga.orchestration.Observer<String>> observers = new ConcurrentLinkedDeque<>();
+    private final Queue<com.metao.examples.designpatterns.saga.orchestration.Observer<String>> observers = new ConcurrentLinkedDeque<>();
 
     @Override
-    public void registerObserver(com.metao.examples.designpatterns.dp.saga.orchestration.Observer<String> observer) {
+    public void registerObserver(com.metao.examples.designpatterns.saga.orchestration.Observer<String> observer) {
         observers.add(observer);
     }
 

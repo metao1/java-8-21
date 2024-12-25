@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.observer;
 
-import com.metao.examples.designpatterns.dp.observer.Observer;
+import com.metao.examples.designpatterns.observer.Observer;
 
 import java.util.ArrayList;
 

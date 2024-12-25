@@ -1,8 +1,8 @@
 package com.metao.examples.designpatterns.visitor;
 
-import com.metao.examples.designpatterns.dp.visitor.Configuration;
-import com.metao.examples.designpatterns.dp.visitor.Modem;
-import com.metao.examples.designpatterns.dp.visitor.OSType;
+import com.metao.examples.designpatterns.visitor.Configuration;
+import com.metao.examples.designpatterns.visitor.Modem;
+import com.metao.examples.designpatterns.visitor.OSType;
 
 public class LinuxConfiguration implements Configuration {
 
@@ -12,7 +12,7 @@ public class LinuxConfiguration implements Configuration {
     }
 
     @Override
-    public com.metao.examples.designpatterns.dp.visitor.OSType osType() {
+    public com.metao.examples.designpatterns.visitor.OSType osType() {
         return OSType.LINUX;
     }
 }

@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.dp.saga.orchestration.ChapterResult;
+import com.metao.examples.designpatterns.saga.orchestration.ChapterResult;
 
 public abstract class Service<K> implements OrchestrationChapter<K> {
 

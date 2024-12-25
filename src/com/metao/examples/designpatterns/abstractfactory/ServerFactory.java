@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.abstractfactory;
 
-import com.metao.examples.designpatterns.dp.abstractfactory.Computer;
-import com.metao.examples.designpatterns.dp.abstractfactory.Server;
+import com.metao.examples.designpatterns.abstractfactory.Computer;
+import com.metao.examples.designpatterns.abstractfactory.Server;
 
 public class ServerFactory implements ComputerAbstractFactory {
 

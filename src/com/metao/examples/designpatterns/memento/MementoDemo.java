@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.memento;
 
-import com.metao.examples.designpatterns.dp.memento.DietInfo;
-import com.metao.examples.designpatterns.dp.memento.DietInfoCaretaker;
+import com.metao.examples.designpatterns.memento.DietInfo;
+import com.metao.examples.designpatterns.memento.DietInfoCaretaker;
 
 public class MementoDemo {
 
@@ -11,7 +11,7 @@ public class MementoDemo {
 		DietInfoCaretaker dietInfoCaretaker = new DietInfoCaretaker();
 
 		// originator
-		com.metao.examples.designpatterns.dp.memento.DietInfo dietInfo = new DietInfo("Fred", 1, 100);
+		com.metao.examples.designpatterns.memento.DietInfo dietInfo = new DietInfo("Fred", 1, 100);
 		System.out.println(dietInfo);
 
 		dietInfo.setDayNumberAndWeight(2, 99);

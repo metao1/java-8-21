@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.saga.choreography;
 
-import com.metao.examples.designpatterns.dp.saga.choreography.OrderService;
-import com.metao.examples.designpatterns.dp.saga.choreography.Saga;
+import com.metao.examples.designpatterns.saga.choreography.OrderService;
+import com.metao.examples.designpatterns.saga.choreography.Saga;
 
 public class SagaApplication {
 
@@ -18,7 +18,7 @@ public class SagaApplication {
   }
 
 
-  private static com.metao.examples.designpatterns.dp.saga.choreography.Saga newSaga(Object value) {
+  private static com.metao.examples.designpatterns.saga.choreography.Saga newSaga(Object value) {
     return Saga
             .create()
             .chapter("init an order").setInValue(value)

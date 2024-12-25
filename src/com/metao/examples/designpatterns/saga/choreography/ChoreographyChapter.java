@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.saga.choreography;
 
-import com.metao.examples.designpatterns.dp.saga.choreography.Saga;
+import com.metao.examples.designpatterns.saga.choreography.Saga;
 
 public interface ChoreographyChapter {
 
@@ -10,7 +10,7 @@ public interface ChoreographyChapter {
    * @param saga incoming saga
    * @return saga result
    */
-  com.metao.examples.designpatterns.dp.saga.choreography.Saga execute(com.metao.examples.designpatterns.dp.saga.choreography.Saga saga);
+  com.metao.examples.designpatterns.saga.choreography.Saga execute(com.metao.examples.designpatterns.saga.choreography.Saga saga);
 
   /**
    * get name method.
@@ -23,17 +23,17 @@ public interface ChoreographyChapter {
    * The operation executed in general case.
    *
    * @param saga incoming saga
-   * @return result {@link com.metao.examples.designpatterns.dp.saga.choreography.Saga}
+   * @return result {@link com.metao.examples.designpatterns.saga.choreography.Saga}
    */
-  com.metao.examples.designpatterns.dp.saga.choreography.Saga process(com.metao.examples.designpatterns.dp.saga.choreography.Saga saga);
+  com.metao.examples.designpatterns.saga.choreography.Saga process(com.metao.examples.designpatterns.saga.choreography.Saga saga);
 
   /**
    * The operation executed in rollback case.
    *
    * @param saga incoming saga
-   * @return result {@link com.metao.examples.designpatterns.dp.saga.choreography.Saga}
+   * @return result {@link com.metao.examples.designpatterns.saga.choreography.Saga}
    */
-  com.metao.examples.designpatterns.dp.saga.choreography.Saga rollback(Saga saga);
+  com.metao.examples.designpatterns.saga.choreography.Saga rollback(Saga saga);
 
 
 }

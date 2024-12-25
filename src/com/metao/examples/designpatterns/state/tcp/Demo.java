@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.state.tcp;
 
-import com.metao.examples.designpatterns.dp.state.tcp.Packet;
-import com.metao.examples.designpatterns.dp.state.tcp.TCPConnection;
+import com.metao.examples.designpatterns.state.tcp.Packet;
+import com.metao.examples.designpatterns.state.tcp.TCPConnection;
 
 public class Demo {
 

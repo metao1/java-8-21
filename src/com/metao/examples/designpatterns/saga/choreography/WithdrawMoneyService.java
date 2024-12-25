@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.saga.choreography;
 
-import com.metao.examples.designpatterns.dp.saga.choreography.Saga;
-import com.metao.examples.designpatterns.dp.saga.choreography.Service;
+import com.metao.examples.designpatterns.saga.choreography.Saga;
+import com.metao.examples.designpatterns.saga.choreography.Service;
 
 public class WithdrawMoneyService extends Service {
 
@@ -15,7 +15,7 @@ public class WithdrawMoneyService extends Service {
   }
 
   @Override
-  public com.metao.examples.designpatterns.dp.saga.choreography.Saga process(com.metao.examples.designpatterns.dp.saga.choreography.Saga saga) {
+  public com.metao.examples.designpatterns.saga.choreography.Saga process(com.metao.examples.designpatterns.saga.choreography.Saga saga) {
     var inValue = saga.getCurrentValue();
 
     if (inValue.equals("bad_order")) {

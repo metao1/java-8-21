@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.lsp.good_practice;
 
-import com.metao.examples.designpatterns.dp.lsp.good_practice.AdvancedRecommender;
+import com.metao.examples.designpatterns.lsp.good_practice.AdvancedRecommender;
 
 public class ArticleProcessor {
 

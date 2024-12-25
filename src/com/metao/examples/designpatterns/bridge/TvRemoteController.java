@@ -1,10 +1,10 @@
 package com.metao.examples.designpatterns.bridge;
 
-import com.metao.examples.designpatterns.dp.bridge.Device;
-import com.metao.examples.designpatterns.dp.bridge.Remote;
+import com.metao.examples.designpatterns.bridge.Device;
+import com.metao.examples.designpatterns.bridge.Remote;
 
 public class TvRemoteController implements Remote {
-    protected com.metao.examples.designpatterns.dp.bridge.Device device;
+    protected com.metao.examples.designpatterns.bridge.Device device;
 
     public TvRemoteController() {}
 

@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.prototype;
 
-import com.metao.examples.designpatterns.dp.prototype.Sheep;
+import com.metao.examples.designpatterns.prototype.Sheep;
 
 public class Main {
     public static void main(String[] args) {

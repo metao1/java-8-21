@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.command;
 
-import com.metao.examples.designpatterns.dp.command.CommandHistory;
-import com.metao.examples.designpatterns.dp.command.CopyCommand;
+import com.metao.examples.designpatterns.command.CommandHistory;
+import com.metao.examples.designpatterns.command.CopyCommand;
 
 import javax.swing.*;
 import java.awt.*;

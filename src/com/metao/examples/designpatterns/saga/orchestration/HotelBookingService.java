@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.dp.saga.orchestration.ChapterResult;
-import com.metao.examples.designpatterns.dp.saga.orchestration.Service;
+import com.metao.examples.designpatterns.saga.orchestration.ChapterResult;
+import com.metao.examples.designpatterns.saga.orchestration.Service;
 
 public class HotelBookingService extends Service<String> {
 
@@ -12,7 +12,7 @@ public class HotelBookingService extends Service<String> {
 
 
   @Override
-  public com.metao.examples.designpatterns.dp.saga.orchestration.ChapterResult<String> rollback(String value) {
+  public com.metao.examples.designpatterns.saga.orchestration.ChapterResult<String> rollback(String value) {
     if (value.equals("crashed_order")) {
       System.out.printf("The Rollback for a chapter '%s' has been started. "
               + "The data %s has been failed.The saga has been crashed.%n",

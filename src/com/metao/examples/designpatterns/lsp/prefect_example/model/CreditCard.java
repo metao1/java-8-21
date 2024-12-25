@@ -1,10 +1,10 @@
 package com.metao.examples.designpatterns.lsp.prefect_example.model;
 
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.service.BaseBankCard;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.service.FraudChecker;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.service.PaymentGatewayHandler;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.service.validator.PaymentInstrumentValidator;
+import com.metao.examples.designpatterns.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
+import com.metao.examples.designpatterns.lsp.prefect_example.service.BaseBankCard;
+import com.metao.examples.designpatterns.lsp.prefect_example.service.FraudChecker;
+import com.metao.examples.designpatterns.lsp.prefect_example.service.PaymentGatewayHandler;
+import com.metao.examples.designpatterns.lsp.prefect_example.service.validator.PaymentInstrumentValidator;
 
 import java.util.Date;
 

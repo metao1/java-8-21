@@ -1,14 +1,14 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.dp.saga.orchestration.Saga;
-import com.metao.examples.designpatterns.dp.saga.orchestration.Saga.Result;
-import com.metao.examples.designpatterns.dp.saga.orchestration.ServiceDiscoveryService;
-import com.metao.examples.designpatterns.dp.saga.orchestration.Subject;
+import com.metao.examples.designpatterns.saga.orchestration.Saga;
+import com.metao.examples.designpatterns.saga.orchestration.Saga.Result;
+import com.metao.examples.designpatterns.saga.orchestration.ServiceDiscoveryService;
+import com.metao.examples.designpatterns.saga.orchestration.Subject;
 
-import static com.metao.examples.designpatterns.dp.saga.orchestration.Saga.Result.*;
+import static com.metao.examples.designpatterns.saga.orchestration.Saga.Result.*;
 
 public class SagaOrchestrator {
-  private final com.metao.examples.designpatterns.dp.saga.orchestration.Saga saga;
+  private final com.metao.examples.designpatterns.saga.orchestration.Saga saga;
   private final ServiceDiscoveryService sd;
   private final CurrentState state;
   private Subject<String> subjectHandler;

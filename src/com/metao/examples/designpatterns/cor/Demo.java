@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.cor;
 
-import com.metao.examples.designpatterns.dp.cor.Server;
+import com.metao.examples.designpatterns.cor.Server;
 
 import java.io.BufferedReader;
 import java.io.IOException;

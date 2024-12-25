@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.facade;
 
-import com.metao.examples.designpatterns.dp.facade.Codec;
+import com.metao.examples.designpatterns.facade.Codec;
 
 public class MPEG4CompressionCodec implements Codec {
     public String type = "mp4";

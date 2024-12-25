@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.proxy;
 
-import com.metao.examples.designpatterns.dp.proxy.YouTubeDownloader;
+import com.metao.examples.designpatterns.proxy.YouTubeDownloader;
 
 public class Demo {
 

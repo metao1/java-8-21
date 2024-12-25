@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.decorator;
 
-import com.metao.examples.designpatterns.dp.decorator.DataSourceDecorator;
+import com.metao.examples.designpatterns.decorator.DataSourceDecorator;
 
 public class Demo {
     public static void main(String[] args) {

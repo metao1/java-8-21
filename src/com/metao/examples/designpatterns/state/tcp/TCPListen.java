@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.state.tcp;
 
-import com.metao.examples.designpatterns.dp.state.tcp.Packet;
-import com.metao.examples.designpatterns.dp.state.tcp.TCPState;
+import com.metao.examples.designpatterns.state.tcp.Packet;
+import com.metao.examples.designpatterns.state.tcp.TCPState;
 
 public class TCPListen implements TCPState {
     private final Connection connection;
@@ -34,7 +34,7 @@ public class TCPListen implements TCPState {
         }
     }
 
-    public com.metao.examples.designpatterns.dp.state.tcp.Packet receive(com.metao.examples.designpatterns.dp.state.tcp.Packet packet) {
+    public com.metao.examples.designpatterns.state.tcp.Packet receive(com.metao.examples.designpatterns.state.tcp.Packet packet) {
         if (this.connection.isOpen()) {
             this.acknowledge(packet.getId());
         }

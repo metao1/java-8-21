@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.composite;
 
-import com.metao.examples.designpatterns.dp.composite.Shape;
+import com.metao.examples.designpatterns.composite.Shape;
 
 import javax.swing.*;
 import javax.swing.border.Border;

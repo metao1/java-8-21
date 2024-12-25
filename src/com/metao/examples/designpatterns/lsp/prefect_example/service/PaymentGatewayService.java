@@ -1,9 +1,9 @@
 package com.metao.examples.designpatterns.lsp.prefect_example.service;
 
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.exception.PaymentFailedException;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.model.PaymentGatewayResponse;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.service.PaymentGateway;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.service.PaymentGatewayHandler;
+import com.metao.examples.designpatterns.lsp.prefect_example.exception.PaymentFailedException;
+import com.metao.examples.designpatterns.lsp.prefect_example.model.PaymentGatewayResponse;
+import com.metao.examples.designpatterns.lsp.prefect_example.service.PaymentGateway;
+import com.metao.examples.designpatterns.lsp.prefect_example.service.PaymentGatewayHandler;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ public class PaymentGatewayService implements PaymentGatewayHandler {
     String cardNumber;
     String verificationCode;
     Date expiryDate;
-    com.metao.examples.designpatterns.dp.lsp.prefect_example.service.PaymentGateway gateway = new PaymentGateway();
+    com.metao.examples.designpatterns.lsp.prefect_example.service.PaymentGateway gateway = new PaymentGateway();
 
     public PaymentGatewayService(String name, String cardNumber, String verificationCode, Date expiryDate) {
         this.name = name;

@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.saga.orchestration;
 
-import com.metao.examples.designpatterns.dp.saga.orchestration.ChapterResult;
+import com.metao.examples.designpatterns.saga.orchestration.ChapterResult;
 
 /**
  * OrchestrationChapter is an interface representing a contract for an external service.
@@ -20,15 +20,15 @@ public interface OrchestrationChapter<K> {
      * The operation executed in general case.
      *
      * @param value incoming value
-     * @return result {@link com.metao.examples.designpatterns.dp.saga.orchestration.ChapterResult}
+     * @return result {@link com.metao.examples.designpatterns.saga.orchestration.ChapterResult}
      */
-    com.metao.examples.designpatterns.dp.saga.orchestration.ChapterResult<K> process(K value);
+    com.metao.examples.designpatterns.saga.orchestration.ChapterResult<K> process(K value);
 
     /**
      * The operation executed in rollback case.
      *
      * @param value incoming value
-     * @return result {@link com.metao.examples.designpatterns.dp.saga.orchestration.ChapterResult}
+     * @return result {@link com.metao.examples.designpatterns.saga.orchestration.ChapterResult}
      */
     ChapterResult<K> rollback(K value);
 }

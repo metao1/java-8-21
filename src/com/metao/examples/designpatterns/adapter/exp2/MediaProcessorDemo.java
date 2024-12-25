@@ -1,8 +1,8 @@
 package com.metao.examples.designpatterns.adapter.exp2;
 
-import com.metao.examples.designpatterns.dp.adapter.exp2.Article;
-import com.metao.examples.designpatterns.dp.adapter.exp2.TargetContentManagement;
-import com.metao.examples.designpatterns.dp.adapter.exp2.Text;
+import com.metao.examples.designpatterns.adapter.exp2.Article;
+import com.metao.examples.designpatterns.adapter.exp2.TargetContentManagement;
+import com.metao.examples.designpatterns.adapter.exp2.Text;
 
 public class MediaProcessorDemo {
 

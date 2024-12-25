@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.solid;
 
-import com.metao.examples.designpatterns.dp.solid.Guitar;
+import com.metao.examples.designpatterns.solid.Guitar;
 
 public class SuperCoolGuitarWithFlames extends Guitar {
 

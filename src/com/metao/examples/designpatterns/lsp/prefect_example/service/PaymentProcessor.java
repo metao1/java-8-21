@@ -1,9 +1,9 @@
 package com.metao.examples.designpatterns.lsp.prefect_example.service;
 
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.exception.PaymentFailedException;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.model.OrderDetails;
-import com.metao.examples.designpatterns.dp.lsp.prefect_example.model.PaymentResponse;
+import com.metao.examples.designpatterns.lsp.prefect_example.exception.PaymentFailedException;
+import com.metao.examples.designpatterns.lsp.prefect_example.exception.PaymentInstrumentInvalidException;
+import com.metao.examples.designpatterns.lsp.prefect_example.model.OrderDetails;
+import com.metao.examples.designpatterns.lsp.prefect_example.model.PaymentResponse;
 
 public class PaymentProcessor {
   public void process(OrderDetails orderDetails, PaymentInstrument paymentInstrument) {

@@ -1,9 +1,9 @@
 package com.metao.examples.designpatterns.visitor;
 
-import com.metao.examples.designpatterns.dp.visitor.Configuration;
-import com.metao.examples.designpatterns.dp.visitor.Connector;
-import com.metao.examples.designpatterns.dp.visitor.Modem;
-import com.metao.examples.designpatterns.dp.visitor.ModemSettingReader;
+import com.metao.examples.designpatterns.visitor.Configuration;
+import com.metao.examples.designpatterns.visitor.Connector;
+import com.metao.examples.designpatterns.visitor.Modem;
+import com.metao.examples.designpatterns.visitor.ModemSettingReader;
 
 public class TpLinkModem implements Modem {
 

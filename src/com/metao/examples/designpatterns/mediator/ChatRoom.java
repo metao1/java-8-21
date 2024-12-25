@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.mediator;
 
-import com.metao.examples.designpatterns.dp.mediator.User;
+import com.metao.examples.designpatterns.mediator.User;
 
 import java.util.Date;
 

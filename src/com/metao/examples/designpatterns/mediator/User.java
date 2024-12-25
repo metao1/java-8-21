@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.mediator;
 
-import com.metao.examples.designpatterns.dp.mediator.ChatRoom;
+import com.metao.examples.designpatterns.mediator.ChatRoom;
 
 public class User {
    private String name;

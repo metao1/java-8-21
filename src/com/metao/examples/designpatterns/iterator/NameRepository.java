@@ -1,13 +1,13 @@
 package com.metao.examples.designpatterns.iterator;
 
-import com.metao.examples.designpatterns.dp.iterator.Container;
-import com.metao.examples.designpatterns.dp.iterator.Iterator;
+import com.metao.examples.designpatterns.iterator.Container;
+import com.metao.examples.designpatterns.iterator.Iterator;
 
 public class NameRepository implements Container {
     public String[] names = {"Robert", "John", "Julie", "Lora"};
 
     @Override
-    public com.metao.examples.designpatterns.dp.iterator.Iterator getIterator() {
+    public com.metao.examples.designpatterns.iterator.Iterator getIterator() {
         return new NameIterator();
     }
 

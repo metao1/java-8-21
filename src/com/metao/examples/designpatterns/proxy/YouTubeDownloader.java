@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.proxy;
 
-import com.metao.examples.designpatterns.dp.proxy.Video;
+import com.metao.examples.designpatterns.proxy.Video;
 
 import java.util.HashMap;
 
@@ -12,7 +12,7 @@ public class YouTubeDownloader {
     }
 
     public void renderVideoPage(String videoId) {
-        com.metao.examples.designpatterns.dp.proxy.Video video = api.getVideo(videoId);
+        com.metao.examples.designpatterns.proxy.Video video = api.getVideo(videoId);
         System.out.println("\n-------------------------------");
         System.out.println("Video page (imagine fancy HTML)");
         System.out.println("ID: " + video.id);
@@ -22,7 +22,7 @@ public class YouTubeDownloader {
     }
 
     public void renderPopularVideos() {
-        HashMap<String, com.metao.examples.designpatterns.dp.proxy.Video> list = api.popularVideos();
+        HashMap<String, com.metao.examples.designpatterns.proxy.Video> list = api.popularVideos();
         System.out.println("\n-------------------------------");
         System.out.println("Most popular videos on YouTube (imagine fancy HTML)");
         for (Video video : list.values()) {

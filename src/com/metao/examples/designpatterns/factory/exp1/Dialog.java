@@ -1,13 +1,13 @@
 package com.metao.examples.designpatterns.factory.exp1;
 
-import com.metao.examples.designpatterns.dp.factory.exp1.Button;
+import com.metao.examples.designpatterns.factory.exp1.Button;
 
-public abstract class Dialog implements com.metao.examples.designpatterns.dp.factory.exp1.Button {
+public abstract class Dialog implements com.metao.examples.designpatterns.factory.exp1.Button {
 
     public void renderWindow() {
         // ... other challenges ...
 
-        com.metao.examples.designpatterns.dp.factory.exp1.Button okButton = createButton();
+        com.metao.examples.designpatterns.factory.exp1.Button okButton = createButton();
         okButton.render();
     }
 

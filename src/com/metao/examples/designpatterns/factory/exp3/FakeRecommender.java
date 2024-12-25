@@ -1,10 +1,10 @@
 package com.metao.examples.designpatterns.factory.exp3;
 
-import com.metao.examples.designpatterns.dp.factory.exp3.Recommendation;
+import com.metao.examples.designpatterns.factory.exp3.Recommendation;
 
 import java.util.List;
 
-class FakeRecommender implements com.metao.examples.designpatterns.dp.factory.exp3.Recommendation {
+class FakeRecommender implements com.metao.examples.designpatterns.factory.exp3.Recommendation {
 
         @Override
         public List<String> onlineIds() {

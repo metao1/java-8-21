@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.state;
 
-import com.metao.examples.designpatterns.dp.state.Player;
+import com.metao.examples.designpatterns.state.Player;
 
 import javax.swing.*;
 import java.awt.*;

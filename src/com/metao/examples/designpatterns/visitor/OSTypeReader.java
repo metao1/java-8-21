@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.visitor;
 
-import com.metao.examples.designpatterns.dp.visitor.OSType;
+import com.metao.examples.designpatterns.visitor.OSType;
 
 public interface OSTypeReader {
     OSType osType();

@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.command;
 
-import com.metao.examples.designpatterns.dp.command.Editor;
+import com.metao.examples.designpatterns.command.Editor;
 
 public class Demo {
     public static void main(String[] args) {

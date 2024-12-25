@@ -1,7 +1,7 @@
 package com.metao.examples.designpatterns.throtlling;
 
-import com.metao.examples.designpatterns.dp.throtlling.CallsCount;
-import com.metao.examples.designpatterns.dp.throtlling.Throttler;
+import com.metao.examples.designpatterns.throtlling.CallsCount;
+import com.metao.examples.designpatterns.throtlling.Throttler;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -9,7 +9,7 @@ import java.util.TimerTask;
 public class ThrottleTimerImpl implements Throttler {
 
   private final int throttlePeriod;
-  private final com.metao.examples.designpatterns.dp.throtlling.CallsCount callsCount;
+  private final com.metao.examples.designpatterns.throtlling.CallsCount callsCount;
 
   public ThrottleTimerImpl(int throttlePeriod, CallsCount callsCount) {
     this.throttlePeriod = throttlePeriod;

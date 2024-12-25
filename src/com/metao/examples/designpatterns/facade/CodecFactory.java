@@ -1,9 +1,9 @@
 package com.metao.examples.designpatterns.facade;
 
-import com.metao.examples.designpatterns.dp.facade.Codec;
-import com.metao.examples.designpatterns.dp.facade.MPEG4CompressionCodec;
-import com.metao.examples.designpatterns.dp.facade.OggCompressionCodec;
-import com.metao.examples.designpatterns.dp.facade.VideoFile;
+import com.metao.examples.designpatterns.facade.Codec;
+import com.metao.examples.designpatterns.facade.MPEG4CompressionCodec;
+import com.metao.examples.designpatterns.facade.OggCompressionCodec;
+import com.metao.examples.designpatterns.facade.VideoFile;
 
 public class CodecFactory {
     public static Codec extract(VideoFile file) {

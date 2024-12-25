@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.facade;
 
-import com.metao.examples.designpatterns.dp.facade.VideoConversionFacade;
+import com.metao.examples.designpatterns.facade.VideoConversionFacade;
 
 import java.io.File;
 

@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.lsp.bad_practice;
 
-import com.metao.examples.designpatterns.dp.lsp.bad_practice.AbstractRecommender;
+import com.metao.examples.designpatterns.lsp.bad_practice.AbstractRecommender;
 
 public class AdvancedRecommender extends AbstractRecommender {
 

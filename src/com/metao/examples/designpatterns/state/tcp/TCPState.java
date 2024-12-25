@@ -1,6 +1,6 @@
 package com.metao.examples.designpatterns.state.tcp;
 
-import com.metao.examples.designpatterns.dp.state.tcp.Packet;
+import com.metao.examples.designpatterns.state.tcp.Packet;
 
 public interface TCPState {
     public void open();

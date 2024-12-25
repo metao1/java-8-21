@@ -1,8 +1,8 @@
 package com.metao.examples.designpatterns.lazyloading;
 
-import com.metao.examples.designpatterns.dp.lazyloading.HolderNaive;
-import com.metao.examples.designpatterns.dp.lazyloading.HolderThreadSafe;
-import com.metao.examples.designpatterns.dp.lazyloading.Java8Holder;
+import com.metao.examples.designpatterns.lazyloading.HolderNaive;
+import com.metao.examples.designpatterns.lazyloading.HolderThreadSafe;
+import com.metao.examples.designpatterns.lazyloading.Java8Holder;
 
 public class App {
 
